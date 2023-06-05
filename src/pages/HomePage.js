@@ -1,6 +1,15 @@
 import React from 'react'
 import LOGO from '../images/logo.jpg'
 import tree from '../images/tree.jpg'
+import img1 from '../images/img1.jpg'
+import img2 from '../images/img2.png'
+import img3 from '../images/img3.jpeg'
+import img4 from '../images/img4.png'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.jpg'
+import img7 from '../images/10.jpg'
+import img8 from '../images/9.jpg'
+import usimg from '../images/kal2.jpg'
 
 const HomePage = () => {
   return (
@@ -30,9 +39,9 @@ const HomePage = () => {
             <div x-cloak className="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
                 <div className="flex flex-col md:flex-row md:mx-6">
                     <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">Home</a>
-                    <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">Shop</a>
-                    <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">Contact</a>
-                    <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">About</a>
+                    <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">ABOUT US</a>
+                    <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">PRODUCTS</a>
+                    <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">CONTACT US</a>
                 </div>
 
                 <div className="flex justify-center md:block">
@@ -51,7 +60,7 @@ const HomePage = () => {
             <div className="flex items-center justify-center w-full h-full bg-gray-900/40">
                 <div className="text-center">
                     <h1 className="text-3xl font-semibold text-white lg:text-4xl">New <span className="text-blue-400">Coir</span> Product Collection</h1>
-                    <button className="w-full px-5 py-2 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Order Now</button>
+                    <button className="w-full px-5 py-2 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500"><a href='Registration'>Order Now</a></button>
                 </div>
             </div>
         </div>
@@ -62,7 +71,7 @@ const HomePage = () => {
 
             <div className="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 <div className="w-full max-w-xs text-center">
-                    <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=739&q=80" alt="avatar" />
+                    <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src={img1} alt="" />
 
                     <div className="mt-2">
                         <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Ahmed Omer</h3>
@@ -71,7 +80,7 @@ const HomePage = () => {
                 </div>
 
                 <div className="w-full max-w-xs text-center">
-                    <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src="https://images.unsplash.com/photo-1516756587022-7891ad56a8cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="avatar" />
+                    <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src={img2} />
 
                     <div className="mt-2">
                         <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Jane Doe</h3>
@@ -80,7 +89,7 @@ const HomePage = () => {
                 </div>
 
                 <div className="w-full max-w-xs text-center">
-                    <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=731&q=80" alt="avatar" />
+                    <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src={img3} />
 
                     <div className="mt-2">
                         <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Steve Ben</h3>
@@ -89,7 +98,7 @@ const HomePage = () => {
                 </div>
 
                 <div className="w-full max-w-xs text-center">
-                    <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="avatar" />
+                    <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src={img4} alt='' />
 
                     <div className="mt-2">
                         <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Patterson Johnson</h3>
@@ -97,7 +106,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
     </section>
     {/* third section about us */}
     <section className="bg-white dark:bg-gray-900">
@@ -112,12 +121,12 @@ const HomePage = () => {
                 <div className="absolute w-full bg-green-900 -z-10 md:h-96 rounded-2xl"></div>
                 
                 <div className="w-full p-6 bg-green-600 md:flex md:items-center rounded-2xl md:bg-transparent md:p-0 lg:px-12 md:justify-evenly">
-                    <img className="h-24 w-24 md:mx-6 rounded-full object-cover shadow-md md:h-[32rem] md:w-80 lg:h-[36rem] lg:w-[26rem] md:rounded-2xl" src="https://images.unsplash.com/photo-1488508872907-592763824245?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="client photo" />
+                    <img className="h-24 w-24 md:mx-6 rounded-full object-cover shadow-md md:h-[32rem] md:w-80 lg:h-[36rem] lg:w-[26rem] md:rounded-2xl" src={usimg} alt="client photo" />
                     
                     <div className="mt-2 md:mx-6">
                         <div>
                             <p className="text-xl font-medium tracking-tight text-white">About Us</p>
-                            <p className="text-blue-200 ">Marketing Manager at Stech</p>
+                            <p className="text-blue-200 ">Founder at RACHICOCO</p>
                         </div>
 
                         <p className="mt-4 text-lg leading-relaxed text-white md:text-xl"> “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda”.</p>
@@ -144,56 +153,70 @@ const HomePage = () => {
 
             <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3">
                 <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
+                    <div className="w-full h-64 bg-gray-300 rounded-lg" >
+                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img1} alt="" />
+                    </div>
+                    <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
+                    <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
+                </div>
+
+                <div className="w-full ">
+                    <div className="w-full h-64 bg-gray-300 rounded-lg ">
+                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img2} alt="" />
+                    </div>
+                    <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
+                    <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
+                </div>
+
+                <div className="w-full ">
+                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600">
+                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img3} alt="" />
+                    </div>
                     
                     <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
                     <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
                 </div>
 
                 <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
+                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600">
+                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img4} alt="" />
+                    </div>
                     
                     <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
                     <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
                 </div>
 
                 <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
+                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600">
+                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img5} alt="" />
+                    </div>
                     
                     <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
                     <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
                 </div>
 
                 <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
+                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600">
+                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img6} alt="" />
+                    </div>
                     
                     <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
                     <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
                 </div>
 
                 <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
+                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600">
+                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img7} alt="" />
+                    </div>
                     
                     <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
                     <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
                 </div>
 
                 <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
-                    
-                    <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                    <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-                </div>
-
-                <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
-                    
-                    <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                    <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-                </div>
-
-                <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600"></div>
+                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600">
+                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img8} alt="" />
+                    </div>
                     
                     <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
                     <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
@@ -210,7 +233,7 @@ const HomePage = () => {
                             <img className="w-auto h-7" src={LOGO} alt=""></img>
                         </a>
 
-                        <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">Join 31,000+ other and never miss out on new tips, tutorials, and more.</p>
+                        <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">Coir for a sustainable future. Join us in creating a greener world, one coir product at a time</p>
 
                         <div className="flex mt-6 -mx-2">
                             <a href="#"
