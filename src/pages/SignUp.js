@@ -1,8 +1,45 @@
-import React from 'react'
+import React, {useState} from 'react'
 import backgroundImage from '../images/login.png'
+
+import CustomerService from '../routes/customerServiceRoutes';
+import { useNavigate } from 'react-router-dom';
 
 
 function SignUp() {
+    
+const navigateTo = useNavigate();
+
+const [firstName, setFirstName] = useState("");
+const [lastName, setLastName] = useState("");
+const [email, setEmail] = useState("");
+const [contactNum, setContactNum] = useState("");
+const [password, setPassword] = useState("");
+const [conpassword, setConPassword] = useState("");
+
+const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const customer = {
+        firstName: firstName,
+        lastName: lastName,
+        email:email,
+        contactNum: contactNum,
+        password: password
+    }
+   
+    CustomerService
+        .signUpCustomer(customer)
+        .then((res) => {
+            console.log("Successfully Registered");
+            navigateTo("/Login");
+            })
+            .catch((error) => {
+            console.log(error);
+    });
+
+}
+   
+
   return (
     <section className="bg-white dark:bg-gray-900">
     <div className="flex justify-center min-h-screen">
@@ -24,36 +61,35 @@ function SignUp() {
                 <form className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
                     <div>
                         <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">First Name</label>
-                        <input type="text" placeholder="John" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" placeholder="John" name='fname' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
                     <div>
                         <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Last name</label>
-                        <input type="text" placeholder="Snow" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" placeholder="Snow" name='lname' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
                     <div>
                         <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Phone number</label>
-                        <input type="text" placeholder="XXX-XX-XXXX-XXX" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input value={contactNum} onChange={(e) => setContactNum(e.target.value)} type="text" placeholder="XXX-XX-XXXX-XXX" name='contactnum' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
                     <div>
                         <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email address</label>
-                        <input type="email" placeholder="johnsnow@example.com" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="johnsnow@example.com" name='email' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
                     <div>
                         <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Password</label>
-                        <input type="password" placeholder="Enter your password" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Enter your password" name='password' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
                     <div>
                         <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Confirm password</label>
-                        <input type="password" placeholder="Enter your password" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input value={conpassword} onChange={(e) => setConPassword(e.target.value)} type="password" placeholder="Enter your password" name='conpassword' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
 
-                    <button id='signup'
-                        className="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                    <button onClick={handleSubmit} className="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                         <span>Sign Up</span>
             
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 rtl:-scale-x-100" viewBox="0 0 20 20" fill="currentColor">
@@ -61,12 +97,8 @@ function SignUp() {
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd" />
                         </svg>
-                       
                         
                     </button>
-                    
-
-
                 </form>
             </div>
         </div>
