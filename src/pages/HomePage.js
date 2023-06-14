@@ -74,8 +74,8 @@ const HomePage = () => {
                     <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src={img1} alt="" />
 
                     <div className="mt-2">
-                        <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Ahmed Omer</h3>
-                        <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">CEO</span>
+                        <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Husk chips in between 0mm-6mm</h3>
+                        <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">4S</span>
                     </div>
                 </div>
 
@@ -83,8 +83,8 @@ const HomePage = () => {
                     <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src={img2} />
 
                     <div className="mt-2">
-                        <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Jane Doe</h3>
-                        <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">Co-founder</span>
+                        <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Husk Chips in between 12mm-19mm</h3>
+                        <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">2S</span>
                     </div>
                 </div>
 
@@ -92,8 +92,8 @@ const HomePage = () => {
                     <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src={img3} />
 
                     <div className="mt-2">
-                        <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Steve Ben</h3>
-                        <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">UI/UX</span>
+                        <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Husk Chips 7mm</h3>
+                        <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">7C</span>
                     </div>
                 </div>
 
@@ -101,8 +101,8 @@ const HomePage = () => {
                     <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src={img4} alt='' />
 
                     <div className="mt-2">
-                        <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Patterson Johnson</h3>
-                        <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">Software Engineer</span>
+                        <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Husk Chips 10mm</h3>
+                        <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">10C</span>
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@ const HomePage = () => {
                             <p className="text-blue-200 ">Founder at RACHICOCO</p>
                         </div>
 
-                        <p className="mt-4 text-lg leading-relaxed text-white md:text-xl"> “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda”.</p>
+                        <p className="mt-4 text-lg leading-relaxed text-white md:text-xl"> “Rochicoco is a company that manufactures products using coconut husks. We mainly focused on making coconut chips for export to the global market. Also, we supply the products to the local market as per the demand. In our, production process we made four types of chips according to international standards. ”.</p>
                         
                         <div className="flex items-center justify-between mt-6 md:justify-end">
 
