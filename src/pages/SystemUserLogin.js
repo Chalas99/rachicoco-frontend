@@ -1,13 +1,13 @@
 import React,{useState} from 'react'
-import backgroundImage from '../images/login.png'
+import backgroundImage from '../images/logini.jpg'
 import logo from '../images/logo.jpg'
-import CustomerService from '../routes/customerServiceRoutes'
+import SystemUser from '../routes/systemUserRoutes'
 
 
 
-const SignIn = () => {
+const SystemUserLogin = () => {
 
-    const [email, setEmail] = useState("");
+    const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [status, setStatus] = useState("");
     const [message, setMessage] = useState('');
@@ -16,12 +16,12 @@ const SignIn = () => {
         e.preventDefault();
 
         const customer = {
-            email:email,
+            userName:userName,
             password:password
         }
         
-        CustomerService
-        .signInCustomer(customer)
+        SystemUser
+        .signInsystemuser(SystemUser)
         .then((res) => {
             console.log(res.data.error);
             console.log(res.data.message);
@@ -39,10 +39,17 @@ const SignIn = () => {
     };
     
   return (
+           
     <div className="bg-white dark:bg-gray-900">
     <div className="flex justify-center h-screen">
+        
+    {/* <div class="grid grid-cols-4 gap-4">
+        <div>01</div>
+        
+        <div>09</div>
+        </div> */}
         <div className="hidden bg-cover lg:block lg:w-2/3" style={{backgroundImage: `url(${backgroundImage})`}}>
-            <div className="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
+            <div className="flex items-center h-full px-20 bg-gray-900 bg-opacity-60">
                 <div>
                     <h2 className="text-2xl font-bold text-white sm:text-3xl">Welcome back! Login to continue</h2>
 
@@ -68,7 +75,7 @@ const SignIn = () => {
                         <div >
                             
                             <label htmlFor="email" className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email Address</label>
-                            <input onChange={(e) => setEmail(e.target.value)}  type="email" name="email" id="email" placeholder="user@gmail.com" className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                            <input onChange={(e) => setUserName(e.target.value)}  type="name" name="name" id="name" placeholder="Chalani Wimalasooriya" className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                         </div>
 
                         <div className="mt-6">
@@ -105,9 +112,7 @@ const SignIn = () => {
                                 </div>
                             </div>
                         </div> : null}
-
-                        
-                        
+ 
                     </form>
 
                 </div>
@@ -118,4 +123,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn;
+export default SystemUserLogin;
