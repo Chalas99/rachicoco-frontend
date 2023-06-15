@@ -5,7 +5,7 @@ const AdminSideBar = () => {
   return (
         <>
     
-        <aside className="fixed flex flex-col w-80 h-screen px-4 py-8 overflow-y-auto dark:bg-gray-900 dark:border-gray-700 ">
+        <aside className="flex flex-col w-full h-screen px-4 py-8 overflow-y-auto dark:bg-gray-900 dark:border-gray-700 ">
            
             <div className="flex flex-col items-center mt-2 -mx-2">
                 <img src={logo} className='w-16'/>
@@ -37,7 +37,7 @@ const AdminSideBar = () => {
                             <path d="M15 5V7M15 11V13M15 17V19M5 5C3.89543 5 3 5.89543 3 7V10C4.10457 10 5 10.8954 5 12C5 13.1046 4.10457 14 3 14V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V14C19.8954 14 19 13.1046 19 12C19 10.8954 19.8954 10 21 10V7C21 5.89543 20.1046 5 19 5H5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
         
-                        <span className="mx-4 font-medium">Tickets</span>
+                        <span className="mx-4 font-medium">Products</span>
                     </a>
         
                     <a className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700" href="#">
@@ -46,7 +46,7 @@ const AdminSideBar = () => {
                             <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
         
-                        <span className="mx-4 font-medium">Settings</span>
+                        <span className="mx-4 font-medium">Reports</span>
                     </a>
                 </nav>
             </div>

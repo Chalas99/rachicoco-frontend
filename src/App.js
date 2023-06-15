@@ -7,6 +7,7 @@ import SignUp from './pages/SignUp';
 import SystemUserLogin from './pages/SystemUserLogin';
 import CustomerProfile from './pages/customer/CustomerProfile';
 import AdminDash from './pages/admin/AdminDash';
+import AdminUserView from './pages/admin/AdminUserView';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
               <Route path="/systemuserlogin" element={<SystemUserLogin/>}></Route>
               <Route path="/CustomerProfile" element={<CustomerProfile/>}></Route>
               <Route path='/Admindash' element={<AdminDash/>}></Route>
+              <Route path='/AdminUserView' element={<AdminUserView/>}></Route>
             </Route>
         </Routes>
     </div>
