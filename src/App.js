@@ -8,6 +8,8 @@ import SystemUserLogin from './pages/SystemUserLogin';
 import CustomerProfile from './pages/customer/CustomerProfile';
 import AdminDash from './pages/admin/AdminDash';
 import AdminUserView from './pages/admin/AdminUserView';
+import AdminProduct from './pages/admin/AdminProduct';
+import AdminReports from './pages/admin/AdminReports';
 
 
 function App() {
@@ -22,7 +24,9 @@ function App() {
               <Route path="/CustomerProfile" element={<CustomerProfile/>}></Route>
               <Route path='/Admindash' element={<AdminDash/>}></Route>
               <Route path='/AdminUserView' element={<AdminUserView/>}></Route>
-            </Route>
+              <Route path='/AdminProduct' element={<AdminProduct/>}></Route>
+              <Route path='AdminReport' element={<AdminReports/>}></Route>
+            </Route>  
         </Routes>
     </div>
   );
