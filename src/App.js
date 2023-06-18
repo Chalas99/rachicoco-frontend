@@ -10,6 +10,9 @@ import AdminDash from './pages/admin/AdminDash';
 import AdminUserView from './pages/admin/AdminUserView';
 import AdminProduct from './pages/admin/AdminProduct';
 import AdminReports from './pages/admin/AdminReports';
+import StoreOrder from './pages/Storekeeper/StoreOrder';
+import StoreInventory from './pages/Storekeeper/StoreInventory';
+import StoreRaw from './pages/Storekeeper/StoreRaw';
 
 
 function App() {
@@ -25,7 +28,10 @@ function App() {
               <Route path='/Admindash' element={<AdminDash/>}></Route>
               <Route path='/AdminUserView' element={<AdminUserView/>}></Route>
               <Route path='/AdminProduct' element={<AdminProduct/>}></Route>
-              <Route path='AdminReport' element={<AdminReports/>}></Route>
+              <Route path='/AdminReport' element={<AdminReports/>}></Route>
+              <Route path='/StoreOrder' element={<StoreOrder/>}></Route>
+              <Route path='/StoreInventory' element={<StoreInventory/>}></Route>
+              <Route path='/StoreRaw' element={<StoreRaw/>}></Route>
             </Route>  
         </Routes>
     </div>
