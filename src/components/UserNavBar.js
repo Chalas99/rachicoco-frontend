@@ -106,9 +106,9 @@ const UserNavBar = () => {
                 </a>
             </div>
             
-            <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-                <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" href='Login'></path></svg>
-            </div>
+            <div class="flex items-center gap-x-6">
+              <img class="object-cover w-8 h-8 rounded-full bo" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&h=764&q=100" alt=""></img>
+            </div>           
 
             <div className="text-center">
                     <button className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-orange-600 md:mx-4 md:my-0"><a href='Registration'>Sign up</a></button>
