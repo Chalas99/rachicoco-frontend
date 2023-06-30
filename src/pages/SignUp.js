@@ -61,15 +61,15 @@ const handleSubmit = async (e) => {
             <div className="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5 " style={{ backgroundColor: 'rgba(128, 128, 128, 0.6)'} }>
                 <div className="w-full">
 
-                    <h1 className="text-3xl font-bold tracking-wider text-gray-800 capitalize dark:text-white mb-6">
-                        SignUp.
+                    <h1 className="text-5xl font-bold tracking-wider text-gray-800 capitalize dark:text-white mb-6">
+                        SignUp
                     </h1>
                     
                     <h1 className="text-xl  tracking-wider text-gray-800 capitalize dark:text-white mb-3">
                         Get your free account now.
                     </h1>
 
-                    <p className="mt-4 text-gray-500 dark:text-orange-300">
+                    <p className="mt-4 text-gray-500 dark:text-orange-400">
                         Let's get you all set up so you can verify your personal account and begin setting up your profile.
                     </p>
 

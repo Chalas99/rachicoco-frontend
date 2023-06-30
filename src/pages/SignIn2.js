@@ -58,25 +58,25 @@ const SignIn2 = () => {
         </div>
 
         
-        <div className="w-3/5  flex items-center"style={{ backgroundColor: 'rgba(128, 128, 128, 0.7)'} }>
+        <div className="w-3/5  flex items-center"style={{ backgroundColor: 'rgba(128, 128, 128, 0.9)'} }>
             <div className="w-full mx-auto">
                 <div>
                     <div className="text-start px-28">
-                        <p className="mt-3 text-6xl font-bold text-white-500">Welcome back!</p>
-                        <h1 className='mt-2 text-2xl font-bold text-orange-400'>Login to continue</h1>
+                        <p className="mt-3 text-6xl font-bold text-gray-900">Welcome back!</p>
+                        <h1 className='mt-2 text-2xl font-bold text-orange-500'>Login to continue</h1>
                     </div>
 
                     <div className="mt-16 px-28">
                         <form onSubmit={handleSubmit}>
                             <div >
-                                <label htmlFor="email" className="flex justify-start block mb-2 font-semibold text-sm text-white-500">Email</label>
+                                <label htmlFor="email" className="flex justify-start block mb-2 font-semibold text-sm text-gray-200">Email</label>
                                 <input onChange={(e) => setEmail(e.target.value)}  type="email" name="email" id="email" placeholder="user@gmail.com" className="block w-full p-2.5 shadow-sm bg-white-500 border border-gray-300 text-gray-900 text- rounded-lg" />
                             </div>
 
                             <div className="mt-6">
                                 <div className="flex justify-between mb-2">
-                                    <label htmlFor="password" className="text-sm text-white-500 font-semibold">Password</label>
-                                    <a href="#" className="text-sm text-gray-600 focus:text-blue-500 hover:text-blue-500 hover:underline">Forgot password?</a>
+                                    <label htmlFor="password" className="text-sm text-gray-200 font-semibold">Password</label>
+                                    <a href="#" className="text-sm text-gray-300 focus:text-blue-500 hover:text-blue-500 hover:underline">Forgot password?</a>
                                 </div>
 
                                 <input onChange={(e) => setPassword(e.target.value)} type="password" name="password" id="password" placeholder="Your Password" className="block w-full p-2.5 shadow-sm bg-white-500 border border-gray-300 text-gray-900 text- rounded-lg"/>
@@ -84,11 +84,11 @@ const SignIn2 = () => {
                             </div>
 
                             <div className="mt-6">
-                                <button type="submit" className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-orange-400 rounded-lg hover:bg-orange-300 focus:outline-none focus:bg-gray-700 focus:ring focus:ring-gray-600 focus:ring-opacity-50">
+                                <button type="submit" className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-orange-500 rounded-lg hover:bg-orange-400 focus:outline-none focus:bg-gray-700 focus:ring focus:ring-gray-600 focus:ring-opacity-50">
                                     Sign in
                                 </button>
                             </div>
-                            <p className="mt-2 text-sm text-center text-gray-400">Don&#x27;t have an account yet? <a href="Registration" className="text-blue-500 focus:outline-none focus:underline hover:underline">Sign up</a>.</p>
+                            <p className="mt-2 text-sm text-center text-gray-200">Don&#x27;t have an account yet? <a href="Registration" className="text-orange-300 focus:outline-none focus:underline hover:underline">Sign up</a>.</p>
 
                             {status === true ? <div className="mt-4 flex w-full overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
                                 <div className="flex items-center justify-center w-12 bg-red-500">

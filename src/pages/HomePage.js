@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import LOGO from '../images/logo.jpg'
 import tree from '../images/tree.jpg'
 import img1 from '../images/img1.jpg'
@@ -10,24 +12,58 @@ import img6 from '../images/6.jpg'
 import img7 from '../images/10.jpg'
 import img8 from '../images/9.jpg'
 import usimg from '../images/kal2.jpg'
+import Banner1 from '../images/Banner1.jpg'
+import about from '../images/logo.jpg'
+
+
+import CocoPith from '../images/Products/Coco_Fibre_Pith.jpg'
+import HuskChips from '../images/Products/Husk_Chips.png'
+import GrowBrick from '../images/14.jpg'
+import GrowBag from '../images/15.webp'
 import UserNavBar from '../components/UserNavBar'
 
 const HomePage = () => {
   return (
-    <> 
+    <dic className ='bg-gray-300'> 
        <div className='fixed top-0 w-full'>
         <UserNavBar/>
        </div>
-        <div className="w-full bg-center bg-cover h-[38rem]" style={{backgroundImage:`url(${tree})`}}>
-            <div className="flex items-center justify-center w-full h-full bg-gray-900/40">
-                <div className="text-center">
-                    <h1 className="text-3xl font-semibold text-white lg:text-4xl">New <span className="text-orange-600">Coir</span> Product Collection</h1>
-                    <button className="w-full px-5 py-2 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-orange-600 rounded-md lg:w-auto hover:bg-orange-500 focus:outline-none focus:bg-orange-500"><a href='Login'>Order now</a></button>
-                </div>
-            </div>
+       <div className="w-full mt-16 bg-center bg-cover h-[38rem]" style={{ backgroundImage: `url(${tree})` }}>
+        <div className="flex items-center justify-center w-full h-full bg-gray-900/40">
+          <div className="text-center">
+            <h1 className="text-3xl font-semibold text-white lg:text-4xl">New <span className="text-orange-600">Coir</span> Product Collection</h1>
+            <button className="w-full px-5 py-2 mt-4 text-sm font-medium text-white transition-colors duration-300 transform bg-orange-600 rounded-md lg:w-auto hover:bg-orange-500 focus:outline-none focus:bg-orange-500"><a href='Login2'>Order now</a></button>
+          </div>
         </div>
-        <section className="bg-white dark:bg-gray-900">
-        {/* second section */}
+      </div>
+
+ <div className="flex mt-5 bg-gray-400">
+        <div className="flex w-1/3  flex items-center flex-col">
+          <div className="flex-1">
+          <img className='h-full' src={about}></img>
+          </div>
+        </div>
+        <div className="flex w-2/3  flex items-center flex-col">
+          <div className="flex-1 bg-gray-800 text-start p-16">
+              <div className="xl:text-5xl lg:text-5xl text-3xl text-white font-medium">
+                About Us
+              </div>
+              <p className='md:text-sm lg:text-base font-semibold text-white mt-12'> 
+              Rochicoco is a company that manufactures products using coconut husks. We mainly focused on making
+               coconut chips for export to the global market. Also, we supply the products to the local market as
+                per the demand. In our, production process we made four types of chips according to international standards. 
+              </p>
+
+            <a className='mt-12' href="./Products">
+              <button className=" mt-16 mr-2 mb-2 hover:bg-green-600 text-green-500 hover:text-white font-bold py-3 px-8 border border-green-500 hover:border-green-600">
+                READ MORE
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    {/* <section className="bg-white ">
+       
         <div className="container px-6 py-8 mx-auto">
             <h2 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Rachicoco Products</h2>
 
@@ -69,135 +105,144 @@ const HomePage = () => {
                 </div>
             </div>
             </div>
-    </section>
-    {/* third section about us */}
-    <section className="bg-white dark:bg-gray-900">
-        <div className="max-w-6xl px-6 py-10 mx-auto">
-            <p className="text-xl font-medium text-blue-500 ">RACHICOCO</p>
-
-            <h1 className="mt-2  text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">
-                WHO WE ARE?
-            </h1>
-
-            <main className="relative z-20 w-full mt-8 md:flex md:items-center xl:mt-12">
-                <div className="absolute w-full bg-green-900 -z-10 md:h-96 rounded-2xl"></div>
-                
-                <div className="w-full p-6 bg-green-600 md:flex md:items-center rounded-2xl md:bg-transparent md:p-0 lg:px-12 md:justify-evenly">
-                    <img className="h-5 w-5 md:mx-6 rounded-full object-cover shadow-md md:h-[10rem] md:w-80 lg:h-[16rem] lg:w-[10rem] md:rounded-2xl" src={usimg} alt="client photo" />
-                    
-                    <div className="mt-2 md:mx-6">
-                        <div>
-                            <p className="text-xl font-medium tracking-tight text-white">About Us</p>
-                            <p className="text-blue-200 ">Founder at RACHICOCO</p>
-                        </div>
-
-                        <p className="mt-4 text-lg leading-relaxed text-white md:text-xl"> “Rochicoco is a company that manufactures products using coconut husks. We mainly focused on making coconut chips for export to the global market. Also, we supply the products to the local market as per the demand. In our, production process we made four types of chips according to international standards. ”.</p>
-                        
-                        <div className="flex items-center justify-between mt-6 md:justify-end">
-
-                            <button title="right arrow" className="p-2 text-white transition-colors duration-300 border rounded-full rtl:-scale-x-100 md:mx-6 hover:bg-blue-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
+    </section> */}
+    <section className='bg-gray-300'>
+    <div className="container mx-auto p-4 mt-12 ">
+        <div className="flex flex-row flex-wrap -mx-2">
+          <div className="w-full md:w-1/3 h-64 md:h-auto mb-4 px-2 relative transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
+            <Link
+              className="block w-full h-full bg-grey-dark bg-no-repeat bg-center bg-cover"
+              to="/"
+              title="Link"
+              style={{
+                backgroundImage: `url(${CocoPith})`,
+              }}
+            ></Link>
+          </div>
+          <div className="w-full md:w-2/3 mb-4 px-2">
+            <div className="flex flex-col sm:flex-row md:flex-col -mx-2">
+              <div className=" flex flex-row sm:w-1/2 md:w-full h-fu48 xl:h-64 sm:mb-0 md:mb-4 px-2">
+                <div className="w-1/2 sm:w-1/3 h-48 md:h-full mb-4 sm:mb-0 px-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
+                  <Link
+                    className="block w-full h-full bg-grey-dark bg-no-repeat bg-center bg-cover"
+                    to="/"
+                    title="Link"
+                    style={{
+                      backgroundImage: `url(${HuskChips})`,
+                    }}
+                  ></Link>
                 </div>
-            </main>
+                <div className="w-1/2 sm:w-1/3 h-48 md:h-full mb-4 sm:mb-0 px-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
+                  <Link
+                    className="block w-full h-full bg-grey-dark bg-no-repeat bg-center bg-cover"
+                    to="/"
+                    title="Link"
+                    style={{
+                      backgroundImage: `url(${GrowBag})`,
+                    }}
+                  ></Link>
+                </div>
+                <div className="w-1/2 sm:w-1/3 h-48 md:h-full px-2">
+                  <Link
+                    className="block w-full h-full bg-grey-dark bg-no-repeat bg-center bg-cover transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300"
+                    to="/"
+                    title="Link"
+                    style={{
+                      backgroundImage: `url(${GrowBrick})`,
+                    }}
+                  ></Link>
+                </div>
+              </div>
+              <div className="w-full sm:w-1/2 md:w-full h-48 xl:h-64 px-4 relative transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
+                <Link
+                  className="block w-full h-full bg-grey-dark bg-no-repeat bg-center bg-cover"
+                  to="/"
+                  title="Link"
+                  style={{
+                    backgroundImage: `url(${Banner1})`,
+                  }}
+                ></Link>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-    <section className="bg-white dark:bg-gray-900">
-        <div className="container px-6 py-10 mx-auto">
-            <h1 className="w-48 h-2 mx-auto bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
 
-            <p className="w-64 h-2 mx-auto mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-            <p className="w-64 h-2 mx-auto mt-4 bg-gray-200 rounded-lg sm:w-80 dark:bg-gray-700"></p>
+        <a href='./Gallery'>
+          <button type="button" className="font-bold mt-4 text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:outline-none focus:ring-green-300 text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600">
+            Go to Gallery
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 ml-2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+            </svg>
+          </button>
+        </a>
+      </div>
+      </section>
+      <section className=" bg-gray-500">
+    <div className="container px-6 py-12 mx-auto">
+        <div>
+            <p className="text-4xl text-blue-500 dark:text-white">Contact us</p>
+            <p className="mt-3 text-gray-500 dark:text-gray-200">Our friendly team would love to hear from you.</p>
+        </div>
 
-            <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3">
-                <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg" >
-                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img1} alt="" />
-                    </div>
-                    <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                    <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
+        <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-1">
+                <div>
+                    <span className="inline-block p-3 text-orange-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                        </svg>
+                    </span>
+
+                    <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">Email</h2>
+                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-200">Our friendly team is here to help.</p>
+                    <p className="mt-2 text-sm text-blue-500 dark:text-orange-500">hello@merakiui.com</p>
                 </div>
 
-                <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg ">
-                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img2} alt="" />
-                    </div>
-                    <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                    <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-                </div>
-
-                <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600">
-                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img3} alt="" />
-                    </div>
+                <div>
+                    <span className="inline-block p-3 text-orange-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+                    </span>
                     
-                    <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                    <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
+                    <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">Office</h2>
+                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-200">Come say hello at our office HQ.</p>
+                    <p className="mt-2 text-sm text-blue-500 dark:text-orange-500">717/1,Moonamale, Panadaragama</p>
                 </div>
 
-                <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600">
-                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img4} alt="" />
-                    </div>
+                <div>
+                    <span className="inline-block p-3 text-orange-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                        </svg>
+                    </span>
                     
-                    <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                    <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-                </div>
-
-                <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600">
-                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img5} alt="" />
-                    </div>
-                    
-                    <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                    <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-                </div>
-
-                <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600">
-                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img6} alt="" />
-                    </div>
-                    
-                    <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                    <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-                </div>
-
-                <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600">
-                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img7} alt="" />
-                    </div>
-                    
-                    <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                    <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
-                </div>
-
-                <div className="w-full ">
-                    <div className="w-full h-64 bg-gray-300 rounded-lg dark:bg-gray-600">
-                    <img className="object-cover object-center w-full h-64 mx-auto rounded-lg" src={img8} alt="" />
-                    </div>
-                    
-                    <h1 className="w-56 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
-                    <p className="w-24 h-2 mt-4 bg-gray-200 rounded-lg dark:bg-gray-700"></p>
+                    <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">Phone</h2>
+                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-200">Mon-Fri from 8am to 5pm.</p>
+                    <p className="mt-2 text-sm text-blue-500 dark:text-orange-500">+94704309780</p>
                 </div>
             </div>
+
+            <div className="overflow-hidden rounded-lg lg:col-span-2 h-96 lg:h-auto">
+                <iframe width="100%" height="100%" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.191104205678!2d80.24188987465473!3d7.554130092459632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae32fc2692354df%3A0xb0882dd7164ad009!2sRACHICOCO!5e0!3m2!1sen!2slk!4v1688109413668!5m2!1sen!2slk"></iframe>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
     <footer className="bg-white dark:bg-gray-900">
-        <div className="container p-6 mx-auto">
+        <div className="container text-sm p-6 mx-auto">
             <div className="lg:flex">
                 <div className="w-full -mx-6 lg:w-2/5">
                     <div className="px-6">
                         <a href="#">
-                            <img className="w-auto h-7" src={LOGO} alt=""></img>
+                            <img className="w-auto h-7 ml-40" src={LOGO} alt=""></img>
                         </a>
 
                         <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">Coir for a sustainable future. Join us in creating a greener world, one coir product at a time</p>
 
-                        <div className="flex mt-6 -mx-2">
+                        <div className="flex mt-6 max-w-sm mx-auto">
                             <a href="#"
                                 className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
                                 aria-label="Reddit">
@@ -220,15 +265,6 @@ const HomePage = () => {
                                 </svg>
                             </a>
                         
-                            <a href="#"
-                                className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
-                                aria-label="Github">
-                                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z">
-                                    </path>
-                                </svg>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -243,23 +279,16 @@ const HomePage = () => {
                         </div>
 
                         <div>
-                            <h3 className="text-gray-700 uppercase dark:text-white">Blog</h3>
-                            <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Tec</a>
-                            <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Music</a>
-                            <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Videos</a>
-                        </div>
-
-                        <div>
                             <h3 className="text-gray-700 uppercase dark:text-white">Products</h3>
-                            <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mega cloud</a>
-                            <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Aperion UI</a>
-                            <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Meraki UI</a>
+                            <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Coco chips</a>
+                            <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Coco peat products</a>
+                            <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Coco fiber product</a>
                         </div>
 
                         <div>
                             <h3 className="text-gray-700 uppercase dark:text-white">Contact</h3>
-                            <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+1 526 654 8965</span>
-                            <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">example@email.com</span>
+                            <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+94704309780</span>
+                            <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">rachicoco@email.com</span>
                         </div>
                     </div>
                 </div>
@@ -272,7 +301,7 @@ const HomePage = () => {
             </div>
         </div>
     </footer>
-</>
+</dic>
   )
 }
 
