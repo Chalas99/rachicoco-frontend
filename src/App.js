@@ -6,8 +6,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import SystemUserLogin from './pages/SystemUserLogin';
 import CustomerProfile from './pages/customer/CustomerProfile';
-import AdminDash from './pages/admin/AdminDash';
-import AdminUserView from './pages/admin/AdminUserView';
+import AdminDash from './pages/admin/AdminUser';
 import AdminProduct from './pages/admin/AdminProduct';
 import AdminReports from './pages/admin/AdminReports';
 import StoreOrder from './pages/Storekeeper/StoreOrder';
@@ -19,6 +18,7 @@ import ModCustomer from './pages/Moderator/ModCustomer';
 import SignIn2 from './pages/SignIn2';
 import PopupForm from './pages/Moderator/PopupForm';
 import HomePage2 from './pages/HomePage2';
+import AdminUser from './pages/admin/AdminUser';
 
 
 function App() {
@@ -33,8 +33,8 @@ function App() {
               <Route path="/Registration" element={<SignUp/>}></Route>
               <Route path="/systemuserlogin" element={<SystemUserLogin/>}></Route>
               <Route path="/CustomerProfile" element={<CustomerProfile/>}></Route>
-              <Route path='/Admindash' element={<AdminDash/>}></Route>
-              <Route path='/AdminUserView' element={<AdminUserView/>}></Route>
+              <Route path='/AdminUser' element={<AdminUser/>}></Route>
+              <Route path='/AdminDash' element={<AdminDash/>}></Route>
               <Route path='/AdminProduct' element={<AdminProduct/>}></Route>
               <Route path='/AdminReport' element={<AdminReports/>}></Route>
               <Route path='/StoreOrder' element={<StoreOrder/>}></Route>
