@@ -16,9 +16,9 @@ import ModEmployee from './pages/Moderator/ModEmployee';
 import ModSupplier from './pages/Moderator/ModSupplier';
 import ModCustomer from './pages/Moderator/ModCustomer';
 import SignIn2 from './pages/SignIn2';
-import PopupForm from './pages/Moderator/PopupForm';
 import HomePage2 from './pages/HomePage2';
 import AdminUser from './pages/admin/AdminUser';
+import AddUserForm from './pages/admin/AddUserForm';
 
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
               <Route path='/ModEmployee' element={<ModEmployee/>}></Route>
               <Route path='/ModSupplier' element={<ModSupplier/>}></Route>
               <Route path='/ModCustomer' element={<ModCustomer/>}></Route>
-              <Route path='PopupForm' element={<PopupForm/>}></Route>
+              <Route path='/AddUserForm' element={<AddUserForm/>}></Route>
             </Route>  
         </Routes>
     </div>
