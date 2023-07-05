@@ -19,6 +19,9 @@ import SignIn2 from './pages/SignIn2';
 import HomePage2 from './pages/HomePage2';
 import AdminUser from './pages/admin/AdminUser';
 import AddUserForm from './pages/admin/AddUserForm';
+import AddProductForm from './pages/admin/AddProductForm';
+import AddCusForm from './pages/Moderator/AddCusForm';
+import AddSupForm from './pages/Moderator/AddSupForm';
 
 
 function App() {
@@ -37,13 +40,17 @@ function App() {
               <Route path='/AdminDash' element={<AdminDash/>}></Route>
               <Route path='/AdminProduct' element={<AdminProduct/>}></Route>
               <Route path='/AdminReport' element={<AdminReports/>}></Route>
+              <Route path='/AddUserForm' element={<AddUserForm/>}></Route>
+              <Route path='/AddProductForm' element={<AddProductForm/>}></Route>
               <Route path='/StoreOrder' element={<StoreOrder/>}></Route>
               <Route path='/StoreInventory' element={<StoreInventory/>}></Route>
               <Route path='/StoreRaw' element={<StoreRaw/>}></Route>
               <Route path='/ModEmployee' element={<ModEmployee/>}></Route>
               <Route path='/ModSupplier' element={<ModSupplier/>}></Route>
               <Route path='/ModCustomer' element={<ModCustomer/>}></Route>
-              <Route path='/AddUserForm' element={<AddUserForm/>}></Route>
+              <Route path='/AddCusForm' element={<AddCusForm/>}></Route>
+              <Route path='/AddSupForm' element={<AddSupForm/>}></Route>
+             
             </Route>  
         </Routes>
     </div>

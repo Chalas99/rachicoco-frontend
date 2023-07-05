@@ -57,7 +57,7 @@ const AdminDash = () => {
                             <tr>
                                 <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                   <div className="flex items-center gap-x-3">
-                                        <span>Sethiya Nisal</span>
+                                        <span>Chalani Wimalasooriya</span>
                                   </div>
                                 </td>
                                 <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
@@ -67,7 +67,7 @@ const AdminDash = () => {
                                 </td>
                                 <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                   <div className="flex items-center gap-x-3">
-                                        <span>Sethi@gmail.com</span>
+                                        <span>chal@gmail.com</span>
                                   </div>
                                 </td>
                             

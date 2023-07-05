@@ -74,7 +74,7 @@ const AdminUser = () => {
                                     <tr>
                                         <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                         <div className="flex items-center gap-x-3">
-                                                <span>Sethiya Nisal</span>
+                                                <span>Chalani Wimalasooriya</span>
                                         </div>
                                         </td>
                                         <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
@@ -84,7 +84,7 @@ const AdminUser = () => {
                                         </td>
                                         <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                         <div className="flex items-center gap-x-3">
-                                                <span>Sethi@gmail.com</span>
+                                                <span>Chal@gmail.com</span>
                                         </div>
                                         </td>
                                     

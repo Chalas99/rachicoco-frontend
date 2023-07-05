@@ -68,17 +68,17 @@ const AdminProduct = () => {
                                         <tr>
                                             <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                             <div className="flex items-center gap-x-3">
-                                                    <span>Sethiya Nisal</span>
+                                                    <span>Husk Chips in between 12mm-19mm</span>
                                             </div>
                                             </td>
                                             <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                             <div className="flex items-center gap-x-3">
-                                                    <span>Supervisor</span>
+                                                    <span>Coco chips</span>
                                             </div>
                                             </td>
                                             <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                             <div className="flex items-center gap-x-3">
-                                                    <span>Sethi@gmail.com</span>
+                                                    <span>Most suitable for Orchid and..</span>
                                             </div>
                                             </td>
                                         
