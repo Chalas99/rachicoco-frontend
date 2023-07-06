@@ -2,6 +2,7 @@ import './App.css';
 import {Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
+import Gellary from './pages/Gellary';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import SystemUserLogin from './pages/SystemUserLogin';
@@ -16,7 +17,6 @@ import ModEmployee from './pages/Moderator/ModEmployee';
 import ModSupplier from './pages/Moderator/ModSupplier';
 import ModCustomer from './pages/Moderator/ModCustomer';
 import SignIn2 from './pages/SignIn2';
-import HomePage2 from './pages/HomePage2';
 import AdminUser from './pages/admin/AdminUser';
 import AddUserForm from './pages/admin/AddUserForm';
 import AddProductForm from './pages/admin/AddProductForm';
@@ -25,13 +25,14 @@ import AddSupForm from './pages/Moderator/AddSupForm';
 import AddEmpForm from './pages/Moderator/AddEmpForm';
 
 
+
 function App() {
   return (
     <div className="App">
         <Routes>
             <Route path="/" element={<Layout/>}>
               <Route path="/" element={<HomePage/>}></Route>
-              <Route path='/sethi' element={<HomePage2/>}></Route>
+              <Route path='/Gellary' element={<Gellary/>}></Route>
               <Route path="/Login" element={<SignIn/>}></Route>
               <Route path="/Login2" element={<SignIn2/>}></Route>
               <Route path="/Registration" element={<SignUp/>}></Route>
