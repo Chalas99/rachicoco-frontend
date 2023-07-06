@@ -22,6 +22,7 @@ import AddUserForm from './pages/admin/AddUserForm';
 import AddProductForm from './pages/admin/AddProductForm';
 import AddCusForm from './pages/Moderator/AddCusForm';
 import AddSupForm from './pages/Moderator/AddSupForm';
+import AddEmpForm from './pages/Moderator/AddEmpForm';
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
               <Route path='/ModCustomer' element={<ModCustomer/>}></Route>
               <Route path='/AddCusForm' element={<AddCusForm/>}></Route>
               <Route path='/AddSupForm' element={<AddSupForm/>}></Route>
+              <Route path='/AddEmpForm' element={<AddEmpForm/>}></Route>
              
             </Route>  
         </Routes>

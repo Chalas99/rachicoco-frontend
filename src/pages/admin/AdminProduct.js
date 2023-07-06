@@ -22,6 +22,7 @@ const AdminProduct = () => {
                 <h2 className="text-3xl font-medium text-orange-500">Products</h2>
                 </div>
                 <div className='flex w-full justify-end'>
+                <a href='/AddProductForm'>
                     <button className="flex items-center px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" className="w-6 h-6 ">
                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -30,6 +31,7 @@ const AdminProduct = () => {
 
                         <span className="mx-1">Add Products</span>
                     </button>
+                    </a>
                 </div>
                 </div>
 
