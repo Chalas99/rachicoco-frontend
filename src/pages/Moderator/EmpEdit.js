@@ -1,15 +1,15 @@
 import React from 'react'
 
-const AddCusForm = () => {
+const EmpEdit = () => {
   return (
     <div>
         <div>
-            <section className="bg-white dark:bg-gray-900" >
+            <section className="bg-white dark:bg-white" >
                 <div className="flex justify-center min-h-screen">
                 
                     <div className="items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5 " style={{ backgroundColor: 'rgba(128, 128, 128, 0.1)'} }>
-                        <h1 className="text-3xl font-bold tracking-wider text-gray-800 capitalize dark:text-white mb-6">
-                                Record Customer Details
+                        <h1 className="text-3xl font-bold tracking-wider text-gray-800 capitalize text-gray-800 mb-6">
+                                Edit Employee Details
                         </h1>
                         <div className=" mt-16 flex justify-center w-full">
                         
@@ -17,15 +17,15 @@ const AddCusForm = () => {
                                 
                                 <div className="flex flex-wrap  mb-6">
                                 <div className="w-full ">
-                                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2 text-left" for="grid-password">
-                                    Customer Name
+                                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-password">
+                                    Employee Name
                                     </label>
                                     <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8" id="grid-password" type="text" placeholder="Chalani Wimalasooriya"/>
                                     
                                 </div>
                                 <div className="w-full mb-6 ">
-                                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2 text-left" for="grid-state">
-                                    Customer type
+                                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-state">
+                                    Job rale
                                     </label>
                                     <div className="relative">
                                     <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
@@ -38,39 +38,51 @@ const AddCusForm = () => {
                                     </div>
                                     </div>
                                 </div>
-                                <div className="flex flex-wrap mb-6 ">
-                                    <div className="w-full md:w-1/2 px-1 mb-6 md:mb-0">
-                                        <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2 text-left" for="grid-first-name">
+                                <div className="flex flex-wrap mb-6">
+                                    <div className="w-full md:w-1/2 px-2 mb-6 md:mb-0">
+                                        <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-first-name">
                                         NIC
                                         </label>
-                                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-8 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="997892283v"/>
+                                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-8 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane"/>
                                         
                                     </div>
-                                    {/* <div className='w-full md:w-1/3'>
-
-                                    </div> */}
-                                    <div className="w-full md:w-1/2 px-0 ">
-                                        <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2 text-left " for="grid-last-name">
+                                    <div className="w-full md:w-1/2 px-2">
+                                        <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-last-name">
                                         Contact Number
                                         </label>
-                                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="037 5896321"/>
+                                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe"/>
                                     </div>
                                     </div>
-
-                                    <div className="w-full ">
-                                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2 text-left" for="grid-password">
-                                    E-mail
-                                    </label>
-                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8" id="grid-password" type="text" placeholder="user@gmail.com"/>
-                                    
-                                </div>
                                 <div className="w-full ">
-                                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2 text-left" for="grid-password">
+                                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-password">
                                     Address
                                     </label>
                                     <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8" id="grid-password" type="text" placeholder="No. 217, Dambulla road, Kurunegala."/>
                                     
                                 </div>
+                                {/* <div>
+                                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                    <DemoContainer components={['DatePicker']}>
+                                        <DatePicker label="Date of Birth" />
+                                    </DemoContainer>
+                                    </LocalizationProvider>
+                                </div>     */}
+{/*                                
+                                <div class="relative max-w-sm">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                                    </svg>
+                                </div>
+                                <input datepicker datepicker-title="Date of birth" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date"/>
+                                </div> */}
+
+                                
+
+
+
+   
+ 
                                 </div>
                                 
                                 
@@ -84,8 +96,8 @@ const AddCusForm = () => {
                 </div>
             </section>
         </div>
-</div>
+    </div>
   )
 }
 
-export default AddCusForm
+export default EmpEdit

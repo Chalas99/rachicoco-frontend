@@ -1,9 +1,10 @@
-import React, {useState}  from 'react'
+import React ,{useState} from 'react'
 import LOGO from '../images/logo.jpg'
+import face from '../images/a2.jpg'
 
 
-const UserNavBar = () => {
 
+const CusNavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {
@@ -13,11 +14,11 @@ const UserNavBar = () => {
     const handleOutsideClick = () => {
       setIsOpen(false);
     };
-  
   return (
     <div>
-      <nav className="relative bg-white shadow dark:bg-gray-900">
-       <div className="container px-4 py-4 mx-auto md:flex md:justify-between md:items-center">
+        <nav className="relative bg-white shadow dark:bg-gray-900">
+            <div className='flex'>
+       <div className=" flex w-5/6 container px-4 py-4 mx-auto md:flex md:justify-between md:items-center">
         <div className="flex items-center justify-between">
             <a href="#">
                 <img className="w-auto h-8 sm:h-9" src={LOGO} alt=""></img>
@@ -95,15 +96,19 @@ const UserNavBar = () => {
                 </div>
                 <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-orange-600 md:mx-4 md:my-0" href="#">CONTACT US</a>
             </div>
-
-            <div className="text-right">
-                    <button className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-orange-600 md:mx-4 md:my-0"><a href='Login2'>Sign In</a></button>
-                    <button className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-orange-600 md:mx-4 md:my-0"><a href='Registration'>Sign up</a></button>
-            </div>
           </div>
+          <div className=" flex w-1/6 container flex items-center justify-end p-6 mx-auto text-gray-600 capitalize dark:text-gray-300 ">
+                <a href="#" className="text-gray-800 transition-colors duration-300 transform dark:text-gray-200 hover:border-b-2 hover:border-orange-500 mx-1.5 sm:mx-6">Log out</a>
+              
+              <div className="flex items-center align-right gap-x-6">
+                  <img className="object-cover w-7 h-7 rounded-full ring ring-gray-300 dark:ring-gray-600" src={face}></img>
+              </div>
+
+            </div>
+            </div>
     </nav>
-   </div>
+    </div>
   )
 }
 
-export default UserNavBar;
+export default CusNavBar

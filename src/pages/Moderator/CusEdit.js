@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddCusForm = () => {
+const CusEdit = () => {
   return (
     <div>
         <div>
@@ -9,7 +9,7 @@ const AddCusForm = () => {
                 
                     <div className="items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5 " style={{ backgroundColor: 'rgba(128, 128, 128, 0.1)'} }>
                         <h1 className="text-3xl font-bold tracking-wider text-gray-800 capitalize dark:text-white mb-6">
-                                Record Customer Details
+                                Edit Customer Details
                         </h1>
                         <div className=" mt-16 flex justify-center w-full">
                         
@@ -17,14 +17,14 @@ const AddCusForm = () => {
                                 
                                 <div className="flex flex-wrap  mb-6">
                                 <div className="w-full ">
-                                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2 text-left" for="grid-password">
+                                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-password">
                                     Customer Name
                                     </label>
                                     <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8" id="grid-password" type="text" placeholder="Chalani Wimalasooriya"/>
                                     
                                 </div>
                                 <div className="w-full mb-6 ">
-                                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2 text-left" for="grid-state">
+                                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-state">
                                     Customer type
                                     </label>
                                     <div className="relative">
@@ -38,34 +38,23 @@ const AddCusForm = () => {
                                     </div>
                                     </div>
                                 </div>
-                                <div className="flex flex-wrap mb-6 ">
-                                    <div className="w-full md:w-1/2 px-1 mb-6 md:mb-0">
-                                        <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2 text-left" for="grid-first-name">
+                                <div className="flex flex-wrap mb-6">
+                                    <div className="w-full md:w-1/2 px-2 mb-6 md:mb-0">
+                                        <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-first-name">
                                         NIC
                                         </label>
-                                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-8 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="997892283v"/>
+                                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-8 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane"/>
                                         
                                     </div>
-                                    {/* <div className='w-full md:w-1/3'>
-
-                                    </div> */}
-                                    <div className="w-full md:w-1/2 px-0 ">
-                                        <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2 text-left " for="grid-last-name">
+                                    <div className="w-full md:w-1/2 px-2">
+                                        <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-last-name">
                                         Contact Number
                                         </label>
-                                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="037 5896321"/>
+                                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe"/>
                                     </div>
                                     </div>
-
-                                    <div className="w-full ">
-                                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2 text-left" for="grid-password">
-                                    E-mail
-                                    </label>
-                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8" id="grid-password" type="text" placeholder="user@gmail.com"/>
-                                    
-                                </div>
                                 <div className="w-full ">
-                                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2 text-left" for="grid-password">
+                                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-password">
                                     Address
                                     </label>
                                     <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8" id="grid-password" type="text" placeholder="No. 217, Dambulla road, Kurunegala."/>
@@ -84,8 +73,8 @@ const AddCusForm = () => {
                 </div>
             </section>
         </div>
-</div>
+    </div>
   )
 }
 
-export default AddCusForm
+export default CusEdit

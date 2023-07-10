@@ -23,6 +23,12 @@ import AddProductForm from './pages/admin/AddProductForm';
 import AddCusForm from './pages/Moderator/AddCusForm';
 import AddSupForm from './pages/Moderator/AddSupForm';
 import AddEmpForm from './pages/Moderator/AddEmpForm';
+import CustomerSideBar from './components/CustomerSideBar';
+import UserEdit from './pages/admin/UserEdit';
+import ProductEdit from './pages/admin/ProductEdit';
+import CusEdit from './pages/Moderator/CusEdit';
+import SupEdit from './pages/Moderator/SupEdit';
+import EmpEdit from './pages/Moderator/EmpEdit';
 
 
 
@@ -37,6 +43,7 @@ function App() {
               <Route path="/Login2" element={<SignIn2/>}></Route>
               <Route path="/Registration" element={<SignUp/>}></Route>
               <Route path="/systemuserlogin" element={<SystemUserLogin/>}></Route>
+              <Route path='/CustomerSideBar' element={<CustomerSideBar/>}></Route>
               <Route path="/CustomerProfile" element={<CustomerProfile/>}></Route>
               <Route path='/AdminUser' element={<AdminUser/>}></Route>
               <Route path='/AdminDash' element={<AdminDash/>}></Route>
@@ -44,6 +51,8 @@ function App() {
               <Route path='/AdminReport' element={<AdminReports/>}></Route>
               <Route path='/AddUserForm' element={<AddUserForm/>}></Route>
               <Route path='/AddProductForm' element={<AddProductForm/>}></Route>
+              <Route path='/AddUserEdit' element={<UserEdit/>}></Route>
+              <Route path='/AddProductEdit' element={<ProductEdit/>}></Route>
               <Route path='/StoreOrder' element={<StoreOrder/>}></Route>
               <Route path='/StoreInventory' element={<StoreInventory/>}></Route>
               <Route path='/StoreRaw' element={<StoreRaw/>}></Route>
@@ -53,6 +62,9 @@ function App() {
               <Route path='/AddCusForm' element={<AddCusForm/>}></Route>
               <Route path='/AddSupForm' element={<AddSupForm/>}></Route>
               <Route path='/AddEmpForm' element={<AddEmpForm/>}></Route>
+              <Route path='/CusEdit' element={<CusEdit/>}></Route>
+              <Route path='/SupEdit' element={<SupEdit/>}></Route>
+              <Route path='/EmpEdit' element={<EmpEdit/>}></Route>
              
             </Route>  
         </Routes>

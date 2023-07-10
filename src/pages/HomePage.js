@@ -3,15 +3,6 @@ import { Link } from 'react-router-dom'
 
 import LOGO from '../images/logo.jpg'
 import tree from '../images/tree.jpg'
-import img1 from '../images/img1.jpg'
-import img2 from '../images/img2.png'
-import img3 from '../images/img3.jpeg'
-import img4 from '../images/img4.png'
-import img5 from '../images/5.jpg'
-import img6 from '../images/6.jpg'
-import img7 from '../images/10.jpg'
-import img8 from '../images/9.jpg'
-import usimg from '../images/kal2.jpg'
 import Banner1 from '../images/Banner1.jpg'
 import about from '../images/logo.jpg'
 
@@ -62,50 +53,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-    {/* <section className="bg-white ">
-       
-        <div className="container px-6 py-8 mx-auto">
-            <h2 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Rachicoco Products</h2>
-
-            <div className="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                <div className="w-full max-w-xs text-center">
-                    <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src={img1} alt="" />
-
-                    <div className="mt-2">
-                        <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Husk chips in between 0mm-6mm</h3>
-                        <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">4S</span>
-                    </div>
-                </div>
-
-                <div className="w-full max-w-xs text-center">
-                    <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src={img2} />
-
-                    <div className="mt-2">
-                        <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Husk Chips in between 12mm-19mm</h3>
-                        <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">2S</span>
-                    </div>
-                </div>
-
-                <div className="w-full max-w-xs text-center">
-                    <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src={img3} />
-
-                    <div className="mt-2">
-                        <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Husk Chips 7mm</h3>
-                        <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">7C</span>
-                    </div>
-                </div>
-
-                <div className="w-full max-w-xs text-center">
-                    <img className="object-cover object-center w-full h-48 mx-auto rounded-lg" src={img4} alt='' />
-
-                    <div className="mt-2">
-                        <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200">Husk Chips 10mm</h3>
-                        <span className="mt-1 font-medium text-gray-600 dark:text-gray-300">10C</span>
-                    </div>
-                </div>
-            </div>
-            </div>
-    </section> */}
+    
     <section className='bg-gray-300'>
     <div className="container mx-auto p-4 mt-12 ">
         <div className="flex flex-row flex-wrap -mx-2">
