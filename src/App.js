@@ -29,6 +29,8 @@ import ProductEdit from './pages/admin/ProductEdit';
 import CusEdit from './pages/Moderator/CusEdit';
 import SupEdit from './pages/Moderator/SupEdit';
 import EmpEdit from './pages/Moderator/EmpEdit';
+import OrderDetails from './pages/customer/OrderDetails';
+import Checkout from './pages/customer/Checkout';
 
 
 
@@ -45,6 +47,7 @@ function App() {
               <Route path="/systemuserlogin" element={<SystemUserLogin/>}></Route>
               <Route path='/CustomerSideBar' element={<CustomerSideBar/>}></Route>
               <Route path="/CustomerProfile" element={<CustomerProfile/>}></Route>
+              <Route path='/orderDetails' element={<OrderDetails/>}></Route>
               <Route path='/AdminUser' element={<AdminUser/>}></Route>
               <Route path='/AdminDash' element={<AdminDash/>}></Route>
               <Route path='/AdminProduct' element={<AdminProduct/>}></Route>
@@ -65,6 +68,7 @@ function App() {
               <Route path='/CusEdit' element={<CusEdit/>}></Route>
               <Route path='/SupEdit' element={<SupEdit/>}></Route>
               <Route path='/EmpEdit' element={<EmpEdit/>}></Route>
+              <Route path='/Checkout' element={<Checkout/>}></Route>
              
             </Route>  
         </Routes>
