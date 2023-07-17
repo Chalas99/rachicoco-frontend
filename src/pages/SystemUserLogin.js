@@ -1,13 +1,13 @@
 import React,{useState} from 'react'
 import backgroundImage from '../images/logini.jpg'
 import logo from '../images/logo.jpg'
-import SystemUser from '../routes/systemUserRoutes'
+import SystemUserService from '../routes/systemUserServiceRoutes'
 
 
 
 const SystemUserLogin = () => {
 
-    const [userName, setUserName] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [status, setStatus] = useState("");
     const [message, setMessage] = useState('');
@@ -15,19 +15,16 @@ const SystemUserLogin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const customer = {
-            userName:userName,
+        const systemuser = {
+            email:email,
             password:password
         }
         
-        SystemUser
-        .signInsystemuser(SystemUser)
+        SystemUserService
+        .signInSystemUser(systemuser)
         .then((res) => {
-            console.log(res.data.error);
-            console.log(res.data.message);
             setStatus(res.data.error);
             setMessage(res.data.message);
-
 
             })
             .catch((error) => {
@@ -75,7 +72,7 @@ const SystemUserLogin = () => {
                         <div >
                             
                             <label htmlFor="email" className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email Address</label>
-                            <input onChange={(e) => setUserName(e.target.value)}  type="name" name="name" id="name" placeholder="Chalani Wimalasooriya" className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                            <input onChange={(e) => setEmail(e.target.value)}  type="email" name="email" id="email" placeholder="user@gmail.com" className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                         </div>
 
                         <div className="mt-6">

@@ -24,21 +24,23 @@ const handleSubmit = async (e) => {
     const customer = {
         firstName: firstName,
         lastName: lastName,
+        contactNo:contactNum,
         email:email,
-        contactNum: contactNum,
         password: password
     }
    
     CustomerService
         .signUpCustomer(customer)
         .then((res) => {
-            console.log("Successfully Registered");
-            navigateTo("/Login");
+            if(res.data.error === true){
+                console.log(res.data.message);
+            }else{
+                navigateTo("/Login");
+            }
             })
-            .catch((error) => {
-            console.log(error);
+        .catch((error) => {
+        console.log(error);
     });
-
 }
    
 

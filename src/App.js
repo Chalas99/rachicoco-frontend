@@ -31,6 +31,7 @@ import SupEdit from './pages/Moderator/SupEdit';
 import EmpEdit from './pages/Moderator/EmpEdit';
 import OrderDetails from './pages/customer/OrderDetails';
 import Checkout from './pages/customer/Checkout';
+import SupportTicket from './pages/customer/SupportTicket';
 
 
 
@@ -47,6 +48,7 @@ function App() {
               <Route path="/systemuserlogin" element={<SystemUserLogin/>}></Route>
               <Route path='/CustomerSideBar' element={<CustomerSideBar/>}></Route>
               <Route path="/CustomerProfile" element={<CustomerProfile/>}></Route>
+              <Route path='/SupportTicket' element={<SupportTicket/>}></Route>
               <Route path='/orderDetails' element={<OrderDetails/>}></Route>
               <Route path='/AdminUser' element={<AdminUser/>}></Route>
               <Route path='/AdminDash' element={<AdminDash/>}></Route>
