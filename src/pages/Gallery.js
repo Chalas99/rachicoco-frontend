@@ -16,7 +16,7 @@ import UserNavBar from '../components/UserNavBar';
 
 
 
-const Gellary = () => {
+const Gallery = () => {
   return (
     <>
       <UserNavBar/>
@@ -213,4 +213,4 @@ const Gellary = () => {
   )
 }
 
-export default Gellary
+export default Gallery

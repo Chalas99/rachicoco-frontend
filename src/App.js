@@ -2,7 +2,7 @@ import './App.css';
 import {Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
-import Gellary from './pages/Gellary';
+import Gallery from './pages/Gallery';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import SystemUserLogin from './pages/SystemUserLogin';
@@ -41,7 +41,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Layout/>}>
               <Route path="/" element={<HomePage/>}></Route>
-              <Route path='/Gellary' element={<Gellary/>}></Route>
+              <Route path='/Gallery' element={<Gallery/>}></Route>
               <Route path="/Login" element={<SignIn/>}></Route>
               <Route path="/Login2" element={<SignIn2/>}></Route>
               <Route path="/Registration" element={<SignUp/>}></Route>
