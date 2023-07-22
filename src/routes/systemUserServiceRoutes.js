@@ -1,7 +1,7 @@
 import Axios from "./axios";
 
 const signInsystemuser = (SystemUser) =>{
-  return Axios.post("/SystemUserLogin", SystemUser);
+  return Axios.post("/Sysuser/SigninUser", SystemUser);
 };
 
 const createSystemUser = (systemUser) =>{

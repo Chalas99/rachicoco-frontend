@@ -1,14 +1,20 @@
 import React,{useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 import backgroundImage from '../images/logini.jpg'
 import logo from '../images/logo.jpg'
 import SystemUserService from '../routes/systemUserServiceRoutes'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 
 
 const SystemUserLogin = () => {
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const navigateTo = useNavigate();
+
+    const { setAuthUser } = useAuthContext();
+
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
     const [status, setStatus] = useState("");
     const [message, setMessage] = useState('');
 
@@ -21,18 +27,34 @@ const SystemUserLogin = () => {
         }
         
         SystemUserService
-        .signInSystemUser(systemuser)
-        .then((res) => {
-            setStatus(res.data.error);
-            setMessage(res.data.message);
+        .signInsystemuser(systemuser)
+        .then((res) =>{
 
+              const user = res.data.user;
+              setAuthUser({user});
+              localStorage.setItem('user', JSON.stringify(user));
+
+            if(res.data.error === true){
+              setStatus(res.data.error);
+              setMessage(res.data.message);
+
+            }else if(user.role === 2080){
+              navigateTo("/AdminDash");
+
+            }else if(user.role === 2060){
+              navigateTo("/ModCustomer"); 
+
+            }else if(user.role === 2050){
+              navigateTo("/StoreInventoryr");
+              
+            }else{
+              console.log("No routes found!");
+            }
             })
-            .catch((error) => {
-            console.log(error);
 
-        
-    });
-   
+        .catch((error) => {
+            console.log(error);
+        })
     };
     
   return (

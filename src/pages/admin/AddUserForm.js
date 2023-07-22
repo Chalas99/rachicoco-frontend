@@ -27,8 +27,11 @@ const AddUserForm = () => {
         SystemUserService
         .createSystemUser(systemuser)
         .then((res) => {
-            console.log("User Successfully Added");
-            navigateTo("/SystemUserLogin");
+            if(res.data.error === true){
+                console.log(res.data.message);
+            }else{
+                navigateTo("/systemuserlogin");
+            }
             })
             .catch((error) => {
             console.log(error);
@@ -40,7 +43,7 @@ const AddUserForm = () => {
         <div>
         <section className="bg-white dark:bg-gray-900" >
         <div className="flex justify-center min-h-screen">
-
+         
          <div className="items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5 " style={{ backgroundColor: 'rgba(128, 128, 128, 0.1)'} }>
          <h1 className="text-3xl font-bold tracking-wider text-gray-800 capitalize dark:text-white mb-6">
                        Add System Users
@@ -75,7 +78,7 @@ const AddUserForm = () => {
                 <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-password">
                 Password
                 </label>
-                <input value={password} onChange={(e) => setPassword(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="password" placeholder="******"/>
+                <input value={password} onChange={(e) => setPassword(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="password" placeholder="**"/>
                 
             </div>
             </div>
@@ -111,6 +114,7 @@ const AddUserForm = () => {
 }
 
 export default AddUserForm
+
 
 
 
