@@ -1,5 +1,7 @@
 import React from 'react'
 import bg1 from '../../images/Products/Grow_Bag.jpeg'
+import i1 from '../../images/Products/Husk_Chips.png'
+import i2 from '../../images/Products/Coco_Fibre_Pith.jpg'
 
 const Checkout = () => {
   return (
@@ -46,7 +48,7 @@ const Checkout = () => {
                     <ul className="space-y-5">
                     <li className="flex justify-between">
                         <div className="inline-flex">
-                        <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGhhaXIlMjBkcnllcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" className="max-h-16" />
+                        <img src={i1} alt="" className="max-h-16" />
                         <div className="ml-3">
                             <p className="text-base font-semibold text-white">Nano Titanium Hair Dryer</p>
                             <p className="text-sm font-medium text-white text-opacity-80">Pdf, doc Kindle</p>
@@ -56,7 +58,7 @@ const Checkout = () => {
                     </li>
                     <li className="flex justify-between">
                         <div className="inline-flex">
-                        <img src="https://images.unsplash.com/photo-1621607512214-68297480165e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fGhhaXIlMjBkcnllcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" className="max-h-16" />
+                        <img src={i2} alt="" className="max-h-16" />
                         <div className="ml-3">
                             <p className="text-base font-semibold text-white">Luisia H35</p>
                             <p className="text-sm font-medium text-white text-opacity-80">Hair Dryer</p>

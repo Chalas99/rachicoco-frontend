@@ -26,6 +26,7 @@ const handleSubmit = async (e) => {
         lastName: lastName,
         contactNo:contactNum,
         email:email,
+        userRole: 2020,
         password: password
     }
    
