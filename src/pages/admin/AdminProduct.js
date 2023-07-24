@@ -1,8 +1,30 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import NavBar from '../../components/NavBar'
 import AdminSideBar from '../../components/AdminSideBar'
+import AdminService from '../../routes/adminServiceRoutes';
+
+
+
 
 const AdminProduct = () => {
+
+    const [products, setProducts] = useState();
+  //  const [shouldFetchData, setShouldFetchData] = useState(true);
+    useEffect(() => {
+          AdminService
+            .getAllProducts()
+            .then((res) => {
+              setProducts(res.data.products);
+
+              console.log(products);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+
+     //       setShouldFetchData(false);
+      },[] );
+
   return (
     <div>
         <div className='fixed top-0 w-full'>
@@ -14,7 +36,7 @@ const AdminProduct = () => {
                 <AdminSideBar/>    
             </div>
             <div className="mx-4 w-4/5 mt-20 ">
-
+            
             <section class="container mt-5 px-4 mx-auto">
             <div className="flex">
                 <div className='flex '>
