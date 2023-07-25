@@ -8,11 +8,14 @@ const addProduct = (product) =>{
   return Axios.post("/Admin/AddProductForm", product);
 };
 
+const deleteproduct = (id) =>{
+  return Axios.post("/Admin/deleteproduct/" +id);
+};
+
 const AdminService = {
   getAllProducts,
-  addProduct
-    
-
+  addProduct,
+  deleteproduct
   };
     
   export default AdminService;

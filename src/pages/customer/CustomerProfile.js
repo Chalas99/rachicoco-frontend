@@ -28,11 +28,9 @@ const CustomerProfile = () => {
 
                       <div>
 
-                          <div className="flex flex-col items-start mt-5 space-y-2">
+                          <div className="flex flex-col items-start mt-3 space-y-2">
                               <h1 className='font-bold text-gray-800'>Username</h1>
-                              <h2>LKR 150.00 </h2>
-                              <h2 className='text-left'>The "Round Husk Pot" is an eco-friendly coir product made from coconut husks, 
-                                  perfect for adding natural charm to your indoor or outdoor spaces.</h2>
+                              <h2>Chalani Wimalasooriya </h2>
                           </div>
                       </div> 
                   
@@ -40,11 +38,18 @@ const CustomerProfile = () => {
                   <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700"></hr>
                   <div>
 
-                          <div className="flex flex-col items-start mt-5 space-y-2">
-                              <h1 className='font-bold text-gray-800'>Username</h1>
-                              <h2>LKR 150.00 </h2>
-                              <h2 className='text-left'>The "Round Husk Pot" is an eco-friendly coir product made from coconut husks, 
-                                  perfect for adding natural charm to your indoor or outdoor spaces.</h2>
+                          <div className="flex flex-col items-start mt-3 space-y-2">
+                              <h1 className='font-bold text-gray-800'>Email</h1>
+                              <h2>chalani99@gmail.com </h2>
+                          </div>
+                      </div> 
+
+                      <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700"></hr>
+                  <div>
+
+                          <div className="flex flex-col items-start mt-3 space-y-2">
+                              <h1 className='font-bold text-gray-800'>address</h1>
+                              <h2>sunethra, Korossa, Dodamgaslanda. </h2>
                           </div>
                       </div> 
                </div>

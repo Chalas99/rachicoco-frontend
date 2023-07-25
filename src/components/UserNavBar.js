@@ -63,7 +63,7 @@ const UserNavBar = () => {
                 <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-orange-600 md:mx-4 md:my-50" href="#">ABOUT US</a>
                 <div className='flex mt-2'>
                   <div >
-                    <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-orange-600 md:mx-4 mt-20" href="#">PRODUCTS</a>
+                    <a className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-orange-600 md:mx-4 mt-20" href="/Gallery">PRODUCTS</a>
                   </div>
                   <div>
                   <div className="relative inline-block">

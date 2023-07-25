@@ -54,6 +54,19 @@ function App() {
               <Route path="/Login" element={<SignIn/>}></Route>
               <Route path="/Registration" element={<SignUp/>}></Route>
               <Route path="/systemuserlogin" element={<SystemUserLogin/>}></Route>
+              <Route path='/ModEmployee' element={<ModEmployee/>}></Route>
+                <Route path='/ModSupplier' element={<ModSupplier/>}></Route>
+                <Route path='/ModCustomer' element={<ModCustomer/>}></Route>
+                <Route path='/AddCusForm' element={<AddCusForm/>}></Route>
+                <Route path='/AddSupForm' element={<AddSupForm/>}></Route>
+                <Route path='/AddEmpForm' element={<AddEmpForm/>}></Route>
+                <Route path='/CusEdit' element={<CusEdit/>}></Route>
+                <Route path='/SupEdit' element={<SupEdit/>}></Route>
+                <Route path='/EmpEdit' element={<EmpEdit/>}></Route>
+                <Route path='/AddProductEdit' element={<ProductEdit/>}></Route>
+                <Route path='/StoreOrder' element={<StoreOrder/>}></Route>
+                <Route path='/StoreInventory' element={<StoreInventory/>}></Route>
+                <Route path='/StoreRaw' element={<StoreRaw/>}></Route>
 
               <Route element={<RequireAuth allowedRole={[ROLES.Admin]}/>}>
                 <Route path='/AdminUser' element={<AdminUser/>}></Route>
@@ -66,22 +79,11 @@ function App() {
               </Route>
 
               <Route element={<RequireAuth allowedRole={[ROLES.Moderator]}/>}>
-                <Route path='/ModEmployee' element={<ModEmployee/>}></Route>
-                <Route path='/ModSupplier' element={<ModSupplier/>}></Route>
-                <Route path='/ModCustomer' element={<ModCustomer/>}></Route>
-                <Route path='/AddCusForm' element={<AddCusForm/>}></Route>
-                <Route path='/AddSupForm' element={<AddSupForm/>}></Route>
-                <Route path='/AddEmpForm' element={<AddEmpForm/>}></Route>
-                <Route path='/CusEdit' element={<CusEdit/>}></Route>
-                <Route path='/SupEdit' element={<SupEdit/>}></Route>
-                <Route path='/EmpEdit' element={<EmpEdit/>}></Route>
+               
               </Route>
 
               <Route element={<RequireAuth allowedRole={[ROLES.StoreKeeper]}/>}>
-                <Route path='/AddProductEdit' element={<ProductEdit/>}></Route>
-                <Route path='/StoreOrder' element={<StoreOrder/>}></Route>
-                <Route path='/StoreInventory' element={<StoreInventory/>}></Route>
-                <Route path='/StoreRaw' element={<StoreRaw/>}></Route>
+               
                
               </Route>
 

@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import { useNavigate } from "react-router-dom";
 import UserNavBar from '../../components/UserNavBar'
+import CustomerSideBar from '../../components/CustomerSideBar';
 
 
 const SupportTicket = () => {
@@ -47,6 +48,12 @@ const SupportTicket = () => {
   return (
     <>
         <UserNavBar/>
+        <div className='flex'>
+        <div className="h-screen sticky top-0 w-1/5 ">
+                <CustomerSideBar/>    
+            </div>
+
+            <div className="mx-4 w-4/5 mt-20 ">
 
         <div className="grid grid-cols-3">
         <div className="col-span-2">
@@ -220,6 +227,8 @@ const SupportTicket = () => {
               </div>
             </div>
           </div>
+        </div>
+        </div>
         </div>
         </div>
     </>

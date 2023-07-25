@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import LOGO from '../images/logo.jpg'
-import tree from '../images/tree.jpg'
+import tree from '../images/img2.png'
 import Banner1 from '../images/Banner1.jpg'
 import about from '../images/logo.jpg'
 
@@ -10,7 +10,7 @@ import about from '../images/logo.jpg'
 import CocoPith from '../images/Products/Coco_Fibre_Pith.jpg'
 import HuskChips from '../images/Products/Husk_Chips.png'
 import GrowBrick from '../images/14.jpg'
-import GrowBag from '../images/15.webp'
+import GrowBag from '../images/5.jpg'
 import UserNavBar from '../components/UserNavBar'
 
 const HomePage = () => {
@@ -19,11 +19,11 @@ const HomePage = () => {
        <div className='fixed top-0 w-full'>
         <UserNavBar/>
        </div>
-       <div className="w-full mt-16 bg-center bg-cover h-[38rem]" style={{ backgroundImage: `url(${tree})` }}>
+       <div className="w-full mt-16 bg-center bg-cover  h-[35rem]" style={{ backgroundImage: `url(${tree})` }}>
         <div className="flex items-center justify-center w-full h-full bg-gray-900/40">
           <div className="text-center">
-            <h1 className="text-3xl font-semibold text-white lg:text-4xl">New <span className="text-orange-600">Coir</span> Product Collection</h1>
-            <button className="w-full px-5 py-2 mt-4 text-sm font-medium text-white transition-colors duration-300 transform bg-orange-600 rounded-md lg:w-auto hover:bg-orange-500 focus:outline-none focus:bg-orange-500"><a href='Login2'>Order now</a></button>
+            <h1 className="text-5xl font-semibold text-white lg:text-5xl">New <span className="text-orange-600">Coir</span> Product Collection</h1>
+            <button className="w-full px-5 py-2 mt-4 text-sm font-medium text-white transition-colors duration-300 transform bg-orange-600 rounded-md lg:w-auto hover:bg-orange-500 focus:outline-none focus:bg-orange-500"><a href='Login'>Order now</a></button>
           </div>
         </div>
       </div>
@@ -117,7 +117,7 @@ const HomePage = () => {
 
         <a href='./Gallery'>
           <button type="button" className="font-bold mt-4 text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:outline-none focus:ring-green-300 text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600">
-            Go to Gallery
+            Our Products
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 ml-2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
             </svg>

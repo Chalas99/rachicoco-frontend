@@ -4,12 +4,13 @@ import CusNavBar from '../../components/CusNavBar';
 import or1 from '../../images/5.jpg'
 import or2 from '../../images/Products/Coco_Fibre_Pith.jpg'
 import or3 from '../../images/Products/Husk_Chips.png'
+import UserNavBar from '../../components/UserNavBar';
 
 const OrderDetails = () => {
   return (
     <div>
     <div className='fixed top-0 w-full'>
-        <CusNavBar/>
+        <UserNavBar/>
     </div>
 
     <div className="flex">
@@ -25,13 +26,13 @@ const OrderDetails = () => {
                     <h1 className="text-xl font-semibold tracking-tight text-gray-800 md:mx-3 xl:text-2xl">Order #5361</h1>
                     
                     <div className="mt-6 md:mx-3 shrink-0 md:mt-0 md:w-auto">
-                        <a href="#" className="inline-flex items-center justify-center w-full px-4 py-2 text-sm text-white duration-300 bg-gray-800 rounded-lg gap-x-3 hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
+                        {/* <a href="#" className="inline-flex items-center justify-center w-full px-4 py-2 text-sm text-white duration-300 bg-gray-800 rounded-lg gap-x-3 hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
                             <span>view invoice</span>
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                             </svg>
-                        </a>
+                        </a> */}
                     </div>
                 </div>
                 
@@ -92,13 +93,13 @@ const OrderDetails = () => {
                     <h1 className="text-xl font-semibold tracking-tight text-gray-800 md:mx-3 xl:text-2xl">Order #5362</h1>
                     
                     <div className="mt-6 md:mx-3 shrink-0 md:mt-0 md:w-auto">
-                        <a href="#" className="inline-flex items-center justify-center w-full px-4 py-2 text-sm text-white duration-300 bg-gray-800 rounded-lg gap-x-3 hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
+                        {/* <a href="#" className="inline-flex items-center justify-center w-full px-4 py-2 text-sm text-white duration-300 bg-gray-800 rounded-lg gap-x-3 hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
                             <span>view invoice</span>
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                             </svg>
-                        </a>
+                        </a> */}
                     </div>
                 </div>
                 
