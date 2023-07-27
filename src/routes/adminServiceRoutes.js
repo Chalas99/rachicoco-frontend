@@ -9,7 +9,7 @@ const addProduct = (product) =>{
 };
 
 const deleteproduct = (id) =>{
-  return Axios.post("/Admin/deleteproduct/" +id);
+  return Axios.delete("/Admin/deleteproduct/" +id);
 };
 
 const AdminService = {

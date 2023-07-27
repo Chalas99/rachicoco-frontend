@@ -33,6 +33,7 @@ import SupportTicket from './pages/customer/SupportTicket';
 import RequireAuth from './components/RequireAuth';
 import Missing from './components/Missing';
 import Unauthorized from './components/Unauthorized';
+import Cart from './pages/customer/Cart';
 
 
 
@@ -92,6 +93,7 @@ function App() {
                 <Route path='/orderDetails' element={<OrderDetails/>}></Route>
                 <Route path='/SupportTicket' element={<SupportTicket/>}></Route>
                 <Route path='/Checkout' element={<Checkout/>}></Route>
+                <Route path='/cart' element={<Cart/>}></Route>
               </Route>
 
               <Route path='/AddUserEdit' element={<UserEdit/>}></Route>
