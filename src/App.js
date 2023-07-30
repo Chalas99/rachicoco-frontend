@@ -34,6 +34,7 @@ import RequireAuth from './components/RequireAuth';
 import Missing from './components/Missing';
 import Unauthorized from './components/Unauthorized';
 import Cart from './pages/customer/Cart';
+import addOrder from './pages/Moderator/addOrder';
 
 
 
@@ -68,6 +69,8 @@ function App() {
                 <Route path='/StoreOrder' element={<StoreOrder/>}></Route>
                 <Route path='/StoreInventory' element={<StoreInventory/>}></Route>
                 <Route path='/StoreRaw' element={<StoreRaw/>}></Route>
+                <Route path='/addOrder' element={<addOrder/>}></Route>
+
 
               <Route element={<RequireAuth allowedRole={[ROLES.Admin]}/>}>
                 <Route path='/AdminUser' element={<AdminUser/>}></Route>

@@ -1,11 +1,9 @@
 import React,{useState} from 'react'
-//import Datepicker from "react-tailwindcss-datepicker";
-// import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-// import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import DatePicker from "react-date-picker";
+import ModService from '../../routes/modServiceRouter';
+import { useNavigate } from 'react-router-dom'
 
-//export default function BasicDatePicker() {
+
 
 const AddEmpForm = () => {
     const [value, setValue] = useState(new Date());
@@ -14,7 +12,49 @@ const AddEmpForm = () => {
         console.log("newValue:", newValue);
         setValue(newValue);
     }
+    const [selectedDate, setSelectedDate] = useState(null);
+
+    const handleDateChange = (e) => {
+        setSelectedDate(e.target.value);
+    };
+
+        const navigateTo = useNavigate();
+      
+        const [Name, setName] = useState("");
+        const [job_role, setJob_role] = useState("");
+        const [NIC, setNIC] = useState("");
+        const [contactNo, setContactNo] = useState("");
+        const [DOB, setDOB] = useState("");
+        const [hireDate, setHireDate] = useState("");
+        const [address, setAddress] = useState("");
     
+        const handleSubmit = async (e) => {
+            e.preventDefault();
+        
+            const Employee = {
+                Name: Name,
+                job_role: job_role,
+                NIC: NIC,
+                contactNo: contactNo,
+                DOB: DOB,
+                hireDate: hireDate,
+                address: address,
+            }
+            
+    
+            ModService
+            .recordempDetails(Employee)
+            .then((res) => {
+                if(res.data.error === true){
+                    console.log(res.data.message);
+                }else{
+                    navigateTo("/ModEmployee");
+                }
+                })
+                .catch((error) => {
+                console.log(error);
+        });
+        }  
 
   return (
     <div>
@@ -35,7 +75,7 @@ const AddEmpForm = () => {
                                     <label className="block uppercase tracking-wide text-left text-gray-800 text-xs font-bold mb-2" for="grid-password">
                                     Employee Name
                                     </label>
-                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8" id="grid-password" type="text" placeholder="Chalani Wimalasooriya"/>
+                                    <input value={Name} onChange={(e) => setName(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8" id="grid-password" type="text" placeholder="Chalani Wimalasooriya"/>
                                     
                                 </div>
                                 <div className="w-full mb-6 ">
@@ -43,7 +83,7 @@ const AddEmpForm = () => {
                                     Job role
                                     </label>
                                     <div className="relative">
-                                    <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                                    <select value={job_role} onChange={(e) => setJob_role(e.target.value)} className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
                                         <option value={2070}>Accountant</option>
                                         <option value={2060}>Moderator</option>
                                         <option value={2050}>Storekeeper</option>
@@ -59,70 +99,53 @@ const AddEmpForm = () => {
                                     </div>
                                 </div>
                                 <div className="flex flex-wrap mb-6">
-                                    <div className="w-full md:w-1/2 px-2 mb-6 md:mb-0">
+                                    <div className="w-full md:w-1/2  mb-6 md:mb-0">
                                         <label className="block uppercase tracking-wide text-left text-gray-800 text-xs font-bold mb-2" for="grid-first-name">
                                         NIC
                                         </label>
-                                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-8 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="997892283V"/>
+                                        <input value={NIC} onChange={(e) => setNIC(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-8 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="997892283V"/>
                                         
                                     </div>
                                     <div className="w-full md:w-1/2 px-2">
                                         <label className="block uppercase tracking-wide text-left text-gray-800 text-xs font-bold mb-2" for="grid-last-name">
                                         Contact Number
                                         </label>
-                                        <input className="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="076 4387563"/>
+                                        <input value={contactNo} onChange={(e) => setContactNo(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="076 4387563"/>
                                     </div>
                                     </div>
                                 <div className="w-full ">
                                     <label className="block uppercase tracking-wide text-left text-gray-800 text-xs font-bold mb-2" for="grid-password">
                                     Address
                                     </label>
-                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8" id="grid-password" type="text" placeholder="No. 217, Dambulla road, Kurunegala."/>
+                                    <input value={address} onChange={(e) => setAddress(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8" id="grid-password" type="text" placeholder="No. 217, Dambulla road, Kurunegala."/>
                                     
                                 </div>
-                                {/* <div>
-                                    <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                    <DemoContainer components={['DatePicker']}>
-                                        <DatePicker label="Date of Birth" />
-                                    </DemoContainer>
-                                    </LocalizationProvider>
-                                </div>     */}
-                               
-                                {/* <div class="relative max-w-sm">
-                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                                    </svg>
+                                <div className="w-full md:w-1/2  mb-6 md:mb-0">
+                                <label className="block uppercase tracking-wide text-left text-gray-800 text-xs font-bold mb-2" for="grid-password">
+                                    Date of birth
+                                    </label>
+                                    <div className=" relative  ">
+                                <input value={DOB} onChange={(e) => setDOB(e.target.value)}
+                                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8"
+                                    type="date" 
+                            //        value={selectedDate} 
+                              //      onChange={handleDateChange}
+                                />
                                 </div>
-                                <input datepicker datepicker-title="Date of birth" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date"/>
-                                </div> */}
-
-                                {/* <div>
-                                    <Datepicker
-                                        selected={value}
-                                        onChange={handleValueChange}
-                                    />
-                                </div> */}
-
-
-                                {/* <div
-                                class="relative mb-3"
-                                data-te-datepicker-init
-                                data-te-input-wrapper-init>
-                                <input
-                                    type="text"
-                                    class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                    placeholder="Select a date" />
-                                <label
-                                    for="floatingInput"
-                                    class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                                    >Select a date</label
-                                >
-                                </div> */}
-
-
-
-   
+                                </div>
+                                <div className="w-full md:w-1/2 px-2 mb-6 md:mb-0">
+                                <label className="block uppercase tracking-wide text-left text-gray-800 text-xs font-bold mb-2" for="grid-password">
+                                    Hire Date
+                                    </label>
+                                    <div className=" relative  ">
+                                <input value={hireDate} onChange={(e) => setHireDate(e.target.value)}
+                                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8"
+                                    type="date" 
+                                    // value={selectedDate} 
+                                    // onChange={handleDateChange}
+                                />
+                                </div>
+                                </div>
  
                                 </div>
                                 

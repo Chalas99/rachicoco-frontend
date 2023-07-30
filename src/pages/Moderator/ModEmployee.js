@@ -66,7 +66,12 @@ const ModEmployee = () => {
                                                 </th>
                                                 <th scope="col" className="py-3.5 px-4 text-lg font-semibold text-left rtl:text-right text-black-500 ">
                                                 <div className="flex items-center gap-x-3">
-                                                        <span>Job</span>
+                                                        <span>Job role</span>
+                                                </div>
+                                                </th>
+                                                <th scope="col" className="py-3.5 px-4 text-lg font-semibold text-left rtl:text-right text-black-500 ">
+                                                <div className="flex items-center gap-x-3">
+                                                        <span>Hire Date</span>
                                                 </div>
                                                 </th>
                                                 <th>

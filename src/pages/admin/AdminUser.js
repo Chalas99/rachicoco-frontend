@@ -1,9 +1,36 @@
 
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import NavBar from '../../components/NavBar'
 import AdminSideBar from '../../components/AdminSideBar'
+import AdminService from '../../routes/adminServiceRoutes';
+
+
 
 const AdminUser = () => {
+//     const [Users, setusers] = useState();
+    
+//     useEffect(() => {
+//           AdminService
+//             .getAllUsers()
+//             .then((res) => {
+//               setusers(res.data.users);
+//             })
+//             .catch((error) => {
+//               console.log(error);
+//             });
+
+//     }, []);
+
+//     const handleDelete = (id) => {
+//         AdminService
+//             .deleteuser(id)
+//             .then((res) => {
+//                 window.location.reload();
+//             })
+//             .catch((error) => {
+//                 console.log(error);
+//             });
+//     }
   return (
     <div> <div className='fixed top-0 w-full'>
     <NavBar/>
@@ -46,6 +73,11 @@ const AdminUser = () => {
                             <table className="min-w-full divide-y divide-gray-200 ">
                                 <thead className="bg-gray-300">
                                     <tr >
+                                    <th scope="col" className="py-3.5 px-4 text-lg font-semibold text-left rtl:text-right text-black-500 ">
+                                            <div className="flex items-center gap-x-3">
+                                                <span>ID</span>
+                                            </div>
+                                        </th>
                                         <th scope="col" className="py-3.5 px-4 text-lg font-semibold text-left rtl:text-right text-black-500 ">
                                             <div className="flex items-center gap-x-3">
                                                 <span>Name</span>
@@ -63,6 +95,11 @@ const AdminUser = () => {
                                                 <span>Email</span>
                                         </div>
                                         </th>
+                                        <th scope="col" className="py-3.5 px-4 text-lg font-semibold text-left rtl:text-right text-black-500 ">
+                                        <div className="flex items-center gap-x-3">
+                                                <span>Contact No.</span>
+                                        </div>
+                                        </th>
                                         <th>
                                         
                                         </th>
@@ -71,20 +108,32 @@ const AdminUser = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-gray-200  ">
-                                    <tr>
+                                {/* {Users?.map((User) => ( 
+                                            <tr key={User.userID}> */}
+                                            <tr>
                                         <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                         <div className="flex items-center gap-x-3">
-                                                <span>Chalani Wimalasooriya</span>
+                                                <span>{"user.userID"}</span>
                                         </div>
                                         </td>
                                         <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                         <div className="flex items-center gap-x-3">
-                                                <span>Supervisor</span>
+                                                <span></span>
                                         </div>
                                         </td>
                                         <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                         <div className="flex items-center gap-x-3">
-                                                <span>Chal@gmail.com</span>
+                                                <span></span>
+                                        </div>
+                                        </td>
+                                        <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                        <div className="flex items-center gap-x-3">
+                                                <span></span>
+                                        </div>
+                                        </td>
+                                        <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                        <div className="flex items-center gap-x-3">
+                                                <span></span>
                                         </div>
                                         </td>
                                     
@@ -107,7 +156,7 @@ const AdminUser = () => {
                                         </td>
                                     </tr>
 
-                                
+                              
 
                                 
                                 </tbody>

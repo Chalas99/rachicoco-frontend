@@ -11,11 +11,25 @@ const addProduct = (product) =>{
 const deleteproduct = (id) =>{
   return Axios.delete("/Admin/deleteproduct/" +id);
 };
+const adduser = (user) => {
+  return Axios.post("/Admin/adduser", user);
+};
+
+const getAllUsers = () => {
+  return Axios.get("/Admin/GetAllUsers");
+};
+
+const deleteuser = (id) =>{
+  return Axios.delete("/Admin/deleteuser/" +id);
+};
 
 const AdminService = {
   getAllProducts,
   addProduct,
-  deleteproduct
+  deleteproduct,
+  adduser,
+  getAllUsers,
+  deleteuser
   };
     
   export default AdminService;

@@ -1,59 +1,48 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import UserNavBar from '../../components/UserNavBar'
 import CustomerSideBar from '../../components/CustomerSideBar';
-
+import ModService from '../../routes/modServiceRouter';
 
 const SupportTicket = () => {
-  const navigateTo = useNavigate();
 
-  const [ticket, setTicket] = useState({
-    name: "",
-    email: "",
-    type: 1,
-    subject: "",
-    description: "",
-  });
-
-  const handleSubmit = (e) => {
+  const [ticket, setTicket] = useState();
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // try {
-    //   axios.post(ADD_SUPPORT_URL, ticket).then((response) => {
-    //     if (response.data.error) {
-    //       console.log(response.data.error);
-    //     } else {
-    //       setTicket({
-    //         name: "",
-    //         email: "",
-    //         type: "",
-    //         subject: "",
-    //         description: "",
-    //       });
+  //       const product = {
+  //           Name: customerName,
+  //           email:email,
+  //           type:type,
+  //           subject:subject,
+  //           description:description,
+  //       }
 
-    //       navigateTo("/");
-    //       alert("Ticket added. Our team will contact you soon.");
-    //     }
-    //   });
-    // } catch (err) {
-    //   console.log(err);
-    // }
-  };
-
-  const handleType = (e) => {
-    e.preventDefault();
-    setTicket({ ...ticket, type: e.target.value });
-  };
+  //       modService
+  //       .createTicket(product)
+  //       .then((res) => {
+  //           if(res.data.error === true){
+  //               console.log(res.data.message);
+  //           }else{
+  //               navigateTo("/CustomerProfile");
+  //           }
+  //           })
+  //           .catch((error) => {
+  //           console.log(error);
+  //   });
+    }
 
   return (
     <>
+        <div className='fixed top-0 w-full'>
         <UserNavBar/>
+        </div>
         <div className='flex'>
         <div className="h-screen sticky top-0 w-1/5 ">
                 <CustomerSideBar/>    
             </div>
 
-            <div className="mx-4 w-4/5 mt-20 ">
+            <div className=" w-full mt-20 ">
 
         <div className="grid grid-cols-3">
         <div className="col-span-2">
@@ -135,7 +124,7 @@ const SupportTicket = () => {
                   <div class="md:w-3/4">
                     <select
                       class="bg-white border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:bg-white focus:border-gray-500 "
-                      onChange={(e) => handleType(e)}
+                      // onChange={(e) => handleType(e)}
                     >
                       <option value="1">General Issues</option>
                       <option value="2">Account Issues</option>
@@ -207,10 +196,7 @@ const SupportTicket = () => {
                   <li className="pb-2">
                     Read the instructions before complete the support ticket.
                   </li>
-                  <li className="pb-2">
-                    Go through the FAQs and see whether there’s an answer
-                    foryour question before sending a support ticket.
-                  </li>
+                  
                   <li className="pb-2">
                     Use the same email you use to log into your Infoplus
                     application when submitting a new Support Ticket.

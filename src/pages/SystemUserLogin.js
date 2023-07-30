@@ -113,7 +113,6 @@ const SystemUserLogin = () => {
                                 Sign in
                             </button>
                         </div>
-                        <p className="mt-2 text-sm text-center text-gray-400">Don&#x27;t have an account yet? <a href="Registration" className="text-blue-500 focus:outline-none focus:underline hover:underline">Sign up</a>.</p>
 
                         {status === true ? <div className="mt-4 flex w-full overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
                             <div className="flex items-center justify-center w-12 bg-red-500">

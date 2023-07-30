@@ -7,7 +7,7 @@ const ProductEdit = () => {
             <section className="bg-white dark:bg-gray-200" >
             <div className="flex justify-center min-h-screen">
             
-            <div className="items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5 " style={{ backgroundColor: 'rgba(128, 128, 128, 0.1)'} }>
+            <div className="items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5 " style={{ backgroundColor: 'rgba(128, 128, 128, 0.7)'} }>
             <h1 className="text-3xl font-bold tracking-wider text-gray-800 capitalize  mb-6">
                         Edit Product Details
                 </h1>
@@ -37,6 +37,13 @@ const ProductEdit = () => {
                         <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                     </div>
                     </div>
+                </div>
+                <div className="w-full mb-6">
+                    <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-password">
+                    Price
+                    </label>
+                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="Text" placeholder="0.00LKR"/>
+                    
                 </div>
                 <div className="w-full mb-6">
                     <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-password">

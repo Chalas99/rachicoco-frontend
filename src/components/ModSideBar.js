@@ -8,8 +8,8 @@ const ModSideBar = () => {
                
                 <div className="flex flex-col items-center mt-2 -mx-2">
                     <img src={logo} className='w-16'/>
-                    <h4 className="mx-2 mt-10 font-medium text-gray-800 dark:text-gray-200">John Doe</h4>
-                    <p className="mx-2 mt-1 text-sm font-medium text-gray-600 dark:text-gray-400">john@example.com</p>
+                    <h4 className="mx-2 mt-10 font-medium text-gray-800 dark:text-gray-200">Chinthaka Dasanayake</h4>
+                    <p className="mx-2 mt-1 text-sm font-medium text-gray-600 dark:text-gray-400">chinthaka@gmail.com</p>
                 </div>
             
                 <div className="flex flex-col justify-between flex-1 mt-6">

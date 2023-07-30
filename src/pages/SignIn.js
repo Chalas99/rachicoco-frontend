@@ -1,21 +1,25 @@
 import React,{useState} from 'react'
-import backgroundImage from '../images/bg2.jpg'
-import { useNavigate } from 'react-router-dom'
+import backgroundImage from '../images/284090-P6KV60-843.jpg'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuthContext } from '../hooks/useAuthContext'
 import CustomerService from '../routes/customerServiceRoutes'
 import UserNavBar from '../components/UserNavBar'
+import img from '../images/1.jpg'
 
 
 
 const SignIn = () => {
 
     const navigateTo = useNavigate();
+    const location = useLocation();
     const { setAuthUser } = useAuthContext();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [status, setStatus] = useState("");
     const [message, setMessage] = useState('');
+
+    const from = location?.state?.from?.pathname || "/CustomerProfile";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -39,7 +43,7 @@ const SignIn = () => {
                 setAuthUser({user});
                 localStorage.setItem('user', JSON.stringify(user));
                 localStorage.setItem('isLoggedIn', true);
-                navigateTo("/CustomerProfile")
+                navigateTo(from, { replace: true });
             }
 
         })
@@ -57,20 +61,17 @@ const SignIn = () => {
             <UserNavBar/>
         </div>
         
-    <div>  
-        <section>
-    <div className="bg-blue" style={{backgroundImage: `url(${backgroundImage})`,backgroundSize:'cover'}}>
-
-    <div className="flex">
-    {/* <div className="hidden bg-cover lg:block lg:w-2/3" > */}
-   
-        <div className="w-2/5  h-screen ">
+        
+        <div>
+        <section className="bg-white dark:bg-gray-900" style={{ backgroundImage: `url(${backgroundImage})` , backgroundSize:'cover'} }>
+        <div className="flex justify-center min-h-screen">
             
-        </div>
+            <div className="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5 " style={{ backgroundColor: 'rgba(128, 128, 128, 0.6)'} }>
+                <div className="w-full">
+
 
         
-        <div className="w-3/5  flex items-center"style={{ backgroundColor: 'rgba(128, 128, 128, 0.9)'} }>
-            <div className="w-full mx-auto">
+      
                 <div>
                     <div className="text-start px-28">
                         <p className="mt-3 text-6xl font-bold text-gray-900">Welcome back!</p>
@@ -124,7 +125,7 @@ const SignIn = () => {
             </div>
          </div>
     </div>
-    </div>  
+    
     </section>
     </div>
     </div>
