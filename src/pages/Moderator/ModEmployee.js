@@ -108,6 +108,11 @@ const ModEmployee = () => {
                                                         <span>Supervisor </span>
                                                 </div>
                                                 </td>
+                                                <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                                <div className="flex items-center gap-x-3">
+                                                        <span>Supervisor </span>
+                                                </div>
+                                                </td>
                                             
                                                 <td className="px-4 py-4 text-sm whitespace-nowrap">
                                                     <div className="flex items-center gap-x-6">

@@ -35,6 +35,9 @@ import Missing from './components/Missing';
 import Unauthorized from './components/Unauthorized';
 import Cart from './pages/customer/Cart';
 import addOrder from './pages/Moderator/addOrder';
+import Detail from './pages/Detail';
+import Invoice1 from './pages/Invoice1';
+import Trans from './pages/Trans';
 
 
 
@@ -69,8 +72,9 @@ function App() {
                 <Route path='/StoreOrder' element={<StoreOrder/>}></Route>
                 <Route path='/StoreInventory' element={<StoreInventory/>}></Route>
                 <Route path='/StoreRaw' element={<StoreRaw/>}></Route>
-                <Route path='/addOrder' element={<addOrder/>}></Route>
-
+                <Route path='/Detail' element={<Detail/>}></Route>
+                <Route path='/invo' element={<Invoice1/>}></Route>
+                <Route path='/Trans' element={<Trans/>}></Route>
 
               <Route element={<RequireAuth allowedRole={[ROLES.Admin]}/>}>
                 <Route path='/AdminUser' element={<AdminUser/>}></Route>
