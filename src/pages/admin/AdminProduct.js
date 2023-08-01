@@ -3,9 +3,6 @@ import NavBar from '../../components/NavBar'
 import AdminSideBar from '../../components/AdminSideBar'
 import AdminService from '../../routes/adminServiceRoutes';
 
-
-
-
 const AdminProduct = () => {
 
     const [products, setProducts] = useState();
@@ -170,5 +167,5 @@ const AdminProduct = () => {
         </div>
   )
 }
-
+                
 export default AdminProduct

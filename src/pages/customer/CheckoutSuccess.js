@@ -36,7 +36,7 @@ useEffect(() => {
             <p className="mb-8 leading-relaxed text-xl">
               you can keep track of all{" "}
               <span className="font-bold ">
-                <Link to="/CustomerProfile">orders</Link>
+                <Link to="/orderDetails">orders</Link>
               </span>{" "}
               from the orders section in the profile page
             </p>

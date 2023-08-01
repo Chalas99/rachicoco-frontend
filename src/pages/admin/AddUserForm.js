@@ -8,18 +8,20 @@ const AddUserForm = () => {
   
     const navigateTo = useNavigate();
   
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [userRole, setUserRole] = useState("");
-    const [startingDate, setStartingDate] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
     
         const systemuser = {
+            firstName: firstName,
+            lastName: lastName,
             email:email,
             userRole: userRole,
-            startingDate: startingDate,
             password: password,
         }
 
@@ -36,11 +38,8 @@ const AddUserForm = () => {
             console.log(error);
     });
     }
-    const [selectedDate, setSelectedDate] = useState(null);
 
-    const handleDateChange = (e) => {
-        setSelectedDate(e.target.value);
-    };  return (
+  return (
     <div>
         <div>
         <section className="bg-white dark:bg-gray-900" >
@@ -54,7 +53,7 @@ const AddUserForm = () => {
          
         <form className="w-full max-w-lg">
             <div className="flex flex-wrap -mx-3 mb-6">
-            {/* <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-first-name">
                 first Name
                 </label>
@@ -66,7 +65,7 @@ const AddUserForm = () => {
                 Last Name
                 </label>
                 <input value={lastName} onChange={(e) => setLastName(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" />
-            </div> */}
+            </div>
             </div>
             <div className="flex flex-wrap -mx-3 mb-2">
             <div className="w-full px-3">
@@ -78,7 +77,7 @@ const AddUserForm = () => {
             </div>
             </div>
             <div className="flex flex-wrap -mx-1 mb-6">
-            <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div className="w-full px-3 mb-6 md:mb-0">
             <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-state">
                 Job Role
                 </label>
@@ -93,26 +92,12 @@ const AddUserForm = () => {
                 </div>
                 </div>
             </div >
-            <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-password">
-                 Date
-                </label>
-                <div className=" relative  ">
-            <input 
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8"
-                type="date" 
-                value={selectedDate} 
-                onChange={handleDateChange}
-                // className="px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-            />
-            </div>
-            </div>
             
             <div className="w-full px-3 mt-2">
                 <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-password">
                 Password
                 </label>
-                <input value={password} onChange={(e) => setPassword(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8" type="email" />
+                <input value={password} onChange={(e) => setPassword(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8" type="password" />
                 
             </div>
             </div>
@@ -130,10 +115,7 @@ const AddUserForm = () => {
     </div>
   </div>
   )
-}
+  }
+  
 
 export default AddUserForm
-
-
-
-

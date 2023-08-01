@@ -1,36 +1,49 @@
 import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom";
 import UserNavBar from '../../components/UserNavBar'
 import CustomerSideBar from '../../components/CustomerSideBar';
-import ModService from '../../routes/modServiceRouter';
+import { useNavigate } from "react-router-dom";
+import CustomerService from '../../routes/customerServiceRoutes';
 
 const SupportTicket = () => {
 
-  const [ticket, setTicket] = useState();
+  const navigateTo = useNavigate();
+  const [ticket, setTicket] = useState({
+    name: "",
+    email: "",
+    type: 1,
+    subject: "",
+    description: "",
+  });
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-  //       const product = {
-  //           Name: customerName,
-  //           email:email,
-  //           type:type,
-  //           subject:subject,
-  //           description:description,
-  //       }
+        const customer = {
+            Name: ticket.name,
+            email:ticket.email,
+            type:ticket.type,
+            subject:ticket.subject,
+            description:ticket.description,
+        }
 
-  //       modService
-  //       .createTicket(product)
-  //       .then((res) => {
-  //           if(res.data.error === true){
-  //               console.log(res.data.message);
-  //           }else{
-  //               navigateTo("/CustomerProfile");
-  //           }
-  //           })
-  //           .catch((error) => {
-  //           console.log(error);
-  //   });
+        CustomerService
+        .supportTicket(customer)
+        .then((res) => {
+            if(res.data.error === true){
+                console.log(res.data.message);
+            }else{
+                navigateTo("/CustomerProfile");
+            }
+            })
+            .catch((error) => {
+            console.log(error);
+    });
     }
+
+    const handleType = (e) => {
+      e.preventDefault();
+      setTicket({ ...ticket, type: e.target.value });
+    };
+
 
   return (
     <>
@@ -124,7 +137,7 @@ const SupportTicket = () => {
                   <div class="md:w-3/4">
                     <select
                       class="bg-white border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:bg-white focus:border-gray-500 "
-                      // onChange={(e) => handleType(e)}
+                      onChange={(e) => handleType(e)}
                     >
                       <option value="1">General Issues</option>
                       <option value="2">Account Issues</option>

@@ -6,9 +6,8 @@ import Gallery from './pages/Gallery';
 import SignUp from './pages/SignUp';
 import SystemUserLogin from './pages/SystemUserLogin';
 import CustomerProfile from './pages/customer/CustomerProfile';
-import AdminDash from './pages/admin/AdminUser';
+import AdminDash from './pages/admin/AdminDash';
 import AdminProduct from './pages/admin/AdminProduct';
-import AdminReports from './pages/admin/AdminReports';
 import StoreOrder from './pages/Storekeeper/StoreOrder';
 import StoreInventory from './pages/Storekeeper/StoreInventory';
 import StoreRaw from './pages/Storekeeper/StoreRaw';
@@ -39,6 +38,8 @@ import Detail from './pages/Detail';
 import Invoice1 from './pages/Invoice1';
 import Trans from './pages/Trans';
 import CheckoutSuccess from './pages/customer/CheckoutSuccess';
+import Reports from './pages/admin/Reports';
+import SalesForecast from './pages/admin/SalesForecast';
 
 
 
@@ -65,18 +66,16 @@ function App() {
                 <Route path='/invo/:id' element={<Invoice1/>}></Route>
                 <Route path='/Trans' element={<Trans/>}></Route>
 
-                <Route path='/AddProductEdit' element={<ProductEdit/>}></Route>
-                <Route path='/StoreOrder' element={<StoreOrder/>}></Route>
-                <Route path='/StoreInventory' element={<StoreInventory/>}></Route>
-                <Route path='/StoreRaw' element={<StoreRaw/>}></Route>
+               
 
               <Route element={<RequireAuth allowedRole={[ROLES.Admin]}/>}>
                 <Route path='/AdminUser' element={<AdminUser/>}></Route>
                 <Route path='/AdminDash' element={<AdminDash/>}></Route>
                 <Route path='/AdminProduct' element={<AdminProduct/>}></Route>
-                <Route path='/AdminReport' element={<AdminReports/>}></Route>
                 <Route path='/AddUserForm' element={<AddUserForm/>}></Route>
                 <Route path='/AddProductForm' element={<AddProductForm/>}></Route>
+                <Route path='/Reports' element={<Reports/>}></Route>
+                <Route path="/sys/admins/reports/sales/:type/:from/:to" element={<SalesForecast />}></Route>
 
               </Route>
 
@@ -94,7 +93,10 @@ function App() {
               </Route>
 
               <Route element={<RequireAuth allowedRole={[ROLES.StoreKeeper]}/>}>
-                
+                <Route path='/AddProductEdit' element={<ProductEdit/>}></Route>
+                <Route path='/StoreOrder' element={<StoreOrder/>}></Route>
+                <Route path='/StoreInventory' element={<StoreInventory/>}></Route>
+                <Route path='/StoreRaw' element={<StoreRaw/>}></Route>
                
                
               </Route>

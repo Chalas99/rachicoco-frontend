@@ -11,6 +11,7 @@ const addProduct = (product) =>{
 const deleteproduct = (id) =>{
   return Axios.delete("/Admin/deleteproduct/" +id);
 };
+
 const adduser = (user) => {
   return Axios.post("/Admin/adduser", user);
 };
@@ -23,13 +24,27 @@ const deleteuser = (id) =>{
   return Axios.delete("/Admin/deleteuser/" +id);
 };
 
+const getSalesData = (data) =>{
+  return Axios.post("/Admin/reports/sales", data);
+};
+
+const getCustomerCount = () =>{
+  return Axios.get("/Admin/getCustomerCount");
+};
+
+const getOrderCount = () =>{
+  return Axios.get("/Admin/getOrderCount");
+};
 const AdminService = {
   getAllProducts,
   addProduct,
   deleteproduct,
   adduser,
   getAllUsers,
-  deleteuser
+  deleteuser,
+  getSalesData,
+  getCustomerCount,
+  getOrderCount
   };
     
   export default AdminService;

@@ -45,7 +45,7 @@ const SystemUserLogin = () => {
               navigateTo("/ModCustomer"); 
 
             }else if(user.role === 2050){
-              navigateTo("/StoreInventoryr");
+              navigateTo("/StoreInventory");
               
             }else{
               console.log("No routes found!");
