@@ -1,7 +1,28 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import LOGO from '../images/logo.jpg'
+import StoreService from '../routes/storeServiceRoutes';
+import { useParams } from "react-router-dom";
 
 const Invoice1 = () => {
+
+    const [Orders, SetOrders] = useState();
+    const {id}= useParams();
+
+    useEffect(() => {
+        console.log(id);
+        StoreService
+            .viewOrder(id)
+            .then ((res) => {
+                SetOrders(res.data.data);
+                console.log(res.data.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+    }, []);
+
+
   return (
     <div>
         <section className="bg-gray-50 dark:bg-slate-900">
@@ -10,7 +31,6 @@ const Invoice1 = () => {
             <div className="flex flex-col p-4 sm:p-10 bg-white shadow-md rounded-xl dark:bg-gray-800">
                 <div className="flex justify-between">
                 <img className="w-auto h-16 sm:h-16" src={LOGO} alt=""></img>
-
                 
                 <div className="text-right">
                     <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200">Invoice #</h2>
@@ -23,16 +43,14 @@ const Invoice1 = () => {
                 </div>
 
                 <div className="mt-8 grid sm:grid-cols-2 gap-3">
+              
                 <div className=" text-left" >
                     <h3 className="text-lg  font-semibold text-gray-800 dark:text-gray-200">Bill to:</h3>
-                    <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">Sara Williams</h3>
+                    <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200"> </h3>
                     <section className="mt-2 not-italic text-gray-500">
-                    280 Suzanne Throughway,
-                    Breannabury, OR 45801,
-                    United States
                     </section>
                 </div>
-
+               
                 <div className="sm:text-right space-y-2">
                     <div className="grid grid-cols-2 sm:grid-cols-1 gap-3 sm:gap-2">
                     <dl className="grid sm:grid-cols-5 gap-x-3">
@@ -57,67 +75,32 @@ const Invoice1 = () => {
                     </div>
 
                     <div className="hidden sm:block border-b border-gray-200 dark:border-gray-700"></div>
-
+                    
+             
                     <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
                     <div className="col-span-full sm:col-span-2">
                         <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">Item</h5>
-                        <p className="font-medium text-gray-800 dark:text-gray-200">Design UX and UI</p>
+                        <p className="font-medium text-gray-800 dark:text-gray-200"></p>
+                       
                     </div>
                     <div>
                         <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">Qty</h5>
-                        <p className="text-gray-800 dark:text-gray-200">1</p>
+                        <p className="text-gray-800 dark:text-gray-200"></p>
+                       
                     </div>
                     <div>
                         <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">Rate</h5>
-                        <p className="text-gray-800 dark:text-gray-200">5</p>
+                        <p className="text-gray-800 dark:text-gray-200"></p>
+                       
                     </div>
                     <div>
                         <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">Amount</h5>
                         <p className="sm:text-right text-gray-800 dark:text-gray-200">$500</p>
                     </div>
                     </div>
+             
 
-                    <div className="sm:hidden border-b border-gray-200 dark:border-gray-700"></div>
 
-                    <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
-                    <div className="col-span-full sm:col-span-2">
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">Item</h5>
-                        <p className="font-medium text-gray-800 dark:text-gray-200">Web project</p>
-                    </div>
-                    <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">Qty</h5>
-                        <p className="text-gray-800 dark:text-gray-200">1</p>
-                    </div>
-                    <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">Rate</h5>
-                        <p className="text-gray-800 dark:text-gray-200">24</p>
-                    </div>
-                    <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">Amount</h5>
-                        <p className="sm:text-right text-gray-800 dark:text-gray-200">$1250</p>
-                    </div>
-                    </div>
-
-                    <div className="sm:hidden border-b border-gray-200 dark:border-gray-700"></div>
-
-                    <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
-                    <div className="col-span-full sm:col-span-2">
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">Item</h5>
-                        <p className="font-medium text-gray-800 dark:text-gray-200">SEO</p>
-                    </div>
-                    <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">Qty</h5>
-                        <p className="text-gray-800 dark:text-gray-200">1</p>
-                    </div>
-                    <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">Rate</h5>
-                        <p className="text-gray-800 dark:text-gray-200">6</p>
-                    </div>
-                    <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">Amount</h5>
-                        <p className="sm:text-right text-gray-800 dark:text-gray-200">$2000</p>
-                    </div>
-                    </div>
                 </div>
                 </div>
 

@@ -2,14 +2,14 @@ import React, {useState, useEffect} from 'react'
 import NavBar from '../../components/NavBar'
 import StoreSideBar from '../../components/StoreSideBar';
 import StoreService from '../../routes/storeServiceRoutes';
-
+import { useNavigate } from "react-router-dom";
 
 
 const StoreOrder = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [viewOrder, setViewOrder] = useState();
 
-
+    const navigateTo = useNavigate();
     const [Orders, SetOrders] = useState();
     
     useEffect(() => {
@@ -18,7 +18,7 @@ const StoreOrder = () => {
             .then((res) => {
                 console.log(res.data.orders);
               SetOrders(res.data.orders);
-
+              console.log(res.data.orders);
             })
             .catch((error) => {
               console.log(error);
@@ -26,12 +26,14 @@ const StoreOrder = () => {
 
     }, []);
 
-    const handleview = (id) => {
-        console.log("mhgcytgvn",id);
+    const handleview = async(id) => {
+
+        console.log(id);
         StoreService
             .viewOrder(id)
-            .then((res) => {
+            .then ((res) => {
                 setViewOrder(res.data.data);
+                setIsVisible(true)
                 console.log(res.data.data);
             })
             .catch((error) => {
@@ -39,6 +41,10 @@ const StoreOrder = () => {
             });
     }
 
+    const handleInvoice=(ID) => {
+        
+        navigateTo(`/invo/${ID}`)
+    }
 
 
   return (
@@ -122,7 +128,7 @@ const StoreOrder = () => {
                                                     <div className="flex items-center gap-x-6">
                                                     <button 
                                                     
-                                                     onClick={() => {handleview(Order.orderID); setIsVisible(true) }}
+                                                     onClick={() => {handleview(Order.orderID)}}
                                                      className="flex items-center px-4 text-white  transition-colors duration-300 transform bg-orange-400 rounded-lg hover:bg-orange-400 focus:outline-none focus:ring focus:ring-orange-300 focus:ring-opacity-80">
                                                         <span className="">View</span>
                                                     </button>
@@ -148,7 +154,9 @@ const StoreOrder = () => {
 
                                         <div class="p-1 mr-4 ml-2 md:flex-row md:space-x-4 md:mt-6 md:text-sm md:font-medium md:bg-white dark:bg-gray-800 md:dark:bg-gray-200 dark:border-gray-500">
                                             <ul class="flex  justify-between ">
-                                            <li class="block  text-gray-600 ml-5">{viewOrder[0].firstName} {viewOrder[0].lastName}</li>
+                                            <li class="block  text-gray-600 ml-5">
+                                            {viewOrder[0].firstName} {viewOrder[0].lastName}
+                                               </li>
                                             </ul>
                                         </div>
 
@@ -158,14 +166,10 @@ const StoreOrder = () => {
                                             </ul>
                                         </div>
 
-                                            <div class="flex w-1/2 p-1 mr-4 ml-2 md:flex-row md:space-x-4 md:mt-6 md:text-sm md:font-medium text-right">
-                                                <ul class="flex justify-between ">
-                                                <li class="block  text-gray-600 ml-5">Items</li>
-                                                </ul>
-                                            </div> 
+                                           
 
-                                            <table className='flex px-4 p-1 md:flex-row md:space-x-4 md:mt-6 md:text-sm md:font-medium text-right'>
-                                                <tr>
+                                            <table className=' px-4 p-1 md:flex-row md:space-x-4 md:mt-6 md:text-sm '>
+                                                <tr >
                                                 <th className='px-4'>
                                                     Product ID
                                                 </th>
@@ -175,21 +179,55 @@ const StoreOrder = () => {
                                                 <th className='px-4'>
                                                     Quantity
                                                 </th>
-                                                <th>
+                                                <th className='px-4'>
                                                     Price
                                                 </th>
                                                 </tr>
-                                               
+                                                <tbody className="bg-white divide-y divide-gray-200  ">
+
+                                                {viewOrder?.map((data) => ( 
+                                            <tr key={data.orderID} >
+
+                                                <td className='px-4'>
+                                                    {data.productID}
+                                                </td>
+                                                <td className='px-4'>
+                                                    {data.productName}  
+                                                </td>
+                                                <td className='px-4'>
+                                                    {data.quantity}
+                                                </td>
+                                                <td className='px-4'>
+                                                    {data.price}
+                                                </td>
+                                                </tr>
+                                                
+                                                ))}
+                                            
+                                                </tbody>
                                             </table>
-                                         
+                                           <div className='mt-4'>
+                                                <h3>Total Price</h3>
+                                                <div>{viewOrder[0].totalPrice}LKR</div>
+                                           </div>
+                                                    
+                                            <div className='flex space-x-4'>
+                                                <button  className="flex w-1/3 items-center justify-center w-full h-8 px-3 py-1 mt-4 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-lg hover:bg-orange-400 focus:outline-none focus:ring focus:ring-orange-300 focus:ring-opacity-50">
+                                                    <span>Confirm</span>
 
+                                                </button>
+                                                <button  className="flex w-1/3 items-center justify-center w-full h-8 px-6 py-3 mt-4 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-lg hover:bg-orange-400 focus:outline-none focus:ring focus:ring-orange-300 focus:ring-opacity-50">
+                                                    <span>Dispatch</span>
 
-                                        
-             
-                                        <button  className="flex items-center justify-center w-full px-6 py-3 mt-4 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-lg hover:bg-orange-400 focus:outline-none focus:ring focus:ring-orange-300 focus:ring-opacity-50">
-                                            <span>submit</span>
+                                                </button>
 
-                                        </button>
+                                                <button onClick={() => {handleInvoice(viewOrder?.orderID)}}
+                                                 className="flex w-1/3 items-center justify-center w-full h-8 px-6 py-3 mt-4 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-lg hover:bg-orange-400 focus:outline-none focus:ring focus:ring-orange-300 focus:ring-opacity-50">
+                                                    <span>Invoice </span>
+                                                </button>
+                                               
+                                            </div>
+
                                    
                                     
                                     <button onClick={() => setIsVisible(false)} className="absolute right-0 top-0 m-4">

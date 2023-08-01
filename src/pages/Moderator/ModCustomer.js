@@ -1,8 +1,25 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import NavBar from '../../components/NavBar'
 import ModSideBar from '../../components/ModSideBar'
+import CustomerService from '../../routes/customerServiceRoutes';
+
 
 const ModCustomer = () => {
+
+    const [Customers, setCustomers] = useState();
+
+    useEffect(() => {
+        CustomerService
+          .findAllCustomers()
+          .then((res) => {
+            setCustomers(res.data.customer);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+
+  }, []);
+
   return (
     <div>
         <div className='fixed top-0 w-full'>
@@ -44,19 +61,19 @@ const ModCustomer = () => {
                                 <tr >
                                     <th scope="col" className="py-3.5 px-4 text-lg font-semibold text-left rtl:text-right text-black-500 ">
                                         <div className="flex items-center gap-x-3">
-                                            <span>Name</span>
+                                            <span>Customer ID</span>
                                         </div>
                                     </th>
 
                                     <th scope="col" className="py-3.5 px-4 text-lg font-semibold text-left rtl:text-right text-black-500 ">
                                         <div className="flex items-center gap-x-3">
-                                            <span>NIC</span>
+                                            <span>Name</span>
                                         </div>
                                     </th>
 
                                     <th scope="col" className="py-3.5 px-4 text-lg font-semibold text-left rtl:text-right text-black-500 ">
                                     <div className="flex items-center gap-x-3">
-                                            <span>Age</span>
+                                            <span>Email</span>
                                     </div>
                                     </th>
                                     <th scope="col" className="py-3.5 px-4 text-lg font-semibold text-left rtl:text-right text-black-500 ">
@@ -64,11 +81,7 @@ const ModCustomer = () => {
                                             <span>Contact number</span>
                                     </div>
                                     </th>
-                                    <th scope="col" className="py-3.5 px-4 text-lg font-semibold text-left rtl:text-right text-black-500 ">
-                                    <div className="flex items-center gap-x-3">
-                                            <span>Job</span>
-                                    </div>
-                                    </th>
+                                   
                                     <th>
                                     
                                     </th>
@@ -77,32 +90,29 @@ const ModCustomer = () => {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200  ">
-                                <tr>
+                                {Customers?.map((customer) => ( 
+                                    <tr key={customer.customerID}>
                                     <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                     <div className="flex items-center gap-x-3">
-                                            <span>Kalhara Wijesundara</span>
+                                            <span>{customer.customerID} </span>
                                     </div>
                                     </td>
                                     <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                     <div className="flex items-center gap-x-3">
-                                            <span>917892283v</span>
+                                            <span>{customer.firstName} {customer.lastName}</span>
                                     </div>
                                     </td>
                                     <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                     <div className="flex items-center gap-x-3">
-                                            <span>31 </span>
+                                            <span>{customer.email}</span>
                                     </div>
                                     </td>
                                     <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                     <div className="flex items-center gap-x-3">
-                                            <span>076 4835961 </span>
+                                            <span>{customer.contactNo} </span>
                                     </div>
                                     </td>
-                                    <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
-                                    <div className="flex items-center gap-x-3">
-                                            <span>Supervisor </span>
-                                    </div>
-                                    </td>
+                                    
                                 
                                     <td className="px-4 py-4 text-sm whitespace-nowrap">
                                         <div className="flex items-center gap-x-6">
@@ -121,7 +131,7 @@ const ModCustomer = () => {
                                     </td>
                                 </tr>
 
-                            
+                                ))}
 
                             
                             </tbody>

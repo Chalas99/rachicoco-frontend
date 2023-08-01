@@ -38,6 +38,7 @@ import addOrder from './pages/Moderator/addOrder';
 import Detail from './pages/Detail';
 import Invoice1 from './pages/Invoice1';
 import Trans from './pages/Trans';
+import CheckoutSuccess from './pages/customer/CheckoutSuccess';
 
 
 
@@ -59,22 +60,15 @@ function App() {
               <Route path="/Login" element={<SignIn/>}></Route>
               <Route path="/Registration" element={<SignUp/>}></Route>
               <Route path="/systemuserlogin" element={<SystemUserLogin/>}></Route>
-              <Route path='/ModEmployee' element={<ModEmployee/>}></Route>
-                <Route path='/ModSupplier' element={<ModSupplier/>}></Route>
-                <Route path='/ModCustomer' element={<ModCustomer/>}></Route>
-                <Route path='/AddCusForm' element={<AddCusForm/>}></Route>
-                <Route path='/AddSupForm' element={<AddSupForm/>}></Route>
-                <Route path='/AddEmpForm' element={<AddEmpForm/>}></Route>
-                <Route path='/CusEdit' element={<CusEdit/>}></Route>
-                <Route path='/SupEdit' element={<SupEdit/>}></Route>
-                <Route path='/EmpEdit' element={<EmpEdit/>}></Route>
+
+                <Route path='/Detail' element={<Detail/>}></Route>
+                <Route path='/invo/:id' element={<Invoice1/>}></Route>
+                <Route path='/Trans' element={<Trans/>}></Route>
+
                 <Route path='/AddProductEdit' element={<ProductEdit/>}></Route>
                 <Route path='/StoreOrder' element={<StoreOrder/>}></Route>
                 <Route path='/StoreInventory' element={<StoreInventory/>}></Route>
                 <Route path='/StoreRaw' element={<StoreRaw/>}></Route>
-                <Route path='/Detail' element={<Detail/>}></Route>
-                <Route path='/invo' element={<Invoice1/>}></Route>
-                <Route path='/Trans' element={<Trans/>}></Route>
 
               <Route element={<RequireAuth allowedRole={[ROLES.Admin]}/>}>
                 <Route path='/AdminUser' element={<AdminUser/>}></Route>
@@ -87,10 +81,20 @@ function App() {
               </Route>
 
               <Route element={<RequireAuth allowedRole={[ROLES.Moderator]}/>}>
+                <Route path='/ModEmployee' element={<ModEmployee/>}></Route>
+                <Route path='/ModSupplier' element={<ModSupplier/>}></Route>
+                <Route path='/ModCustomer' element={<ModCustomer/>}></Route>
+                <Route path='/AddCusForm' element={<AddCusForm/>}></Route>
+                <Route path='/AddSupForm' element={<AddSupForm/>}></Route>
+                <Route path='/AddEmpForm' element={<AddEmpForm/>}></Route>
+                <Route path='/CusEdit' element={<CusEdit/>}></Route>
+                <Route path='/SupEdit' element={<SupEdit/>}></Route>
+                <Route path='/EmpEdit' element={<EmpEdit/>}></Route>
                
               </Route>
 
               <Route element={<RequireAuth allowedRole={[ROLES.StoreKeeper]}/>}>
+                
                
                
               </Route>
@@ -101,6 +105,8 @@ function App() {
                 <Route path='/SupportTicket' element={<SupportTicket/>}></Route>
                 <Route path='/Checkout' element={<Checkout/>}></Route>
                 <Route path='/cart' element={<Cart/>}></Route>
+                <Route path='/Checkout-Success' element={<CheckoutSuccess/>}></Route>
+
               </Route>
 
               <Route path='/AddUserEdit' element={<UserEdit/>}></Route>

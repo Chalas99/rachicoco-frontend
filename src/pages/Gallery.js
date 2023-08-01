@@ -30,7 +30,7 @@ const Gallery = () => {
             });
 
     }, []);
-
+    
     const handleCart = async (product) => {
       if (!authUser.user) {
         navigateTo(
@@ -45,7 +45,7 @@ const Gallery = () => {
       }else{
         let itemCount = cart.count;
         const isItemAlreadyAdded = cart.cartItems.some(
-          (item) => item.productID === product.productID
+          (item) => item.productID == product.productID
         );
 
         if (isItemAlreadyAdded) {
@@ -65,13 +65,14 @@ const Gallery = () => {
           setTimeout(() => {
             setCartSuccess(false);
           }, 1000);
+          localStorage.setItem('cart', JSON.stringify(cart));
         }
       }
     }
 
     const [activeTab, setActiveTab] = useState("Coco chips");
 
-    const tabs = ['Coco chips', 'Coco peat ', 'Coco fiber products'];
+    const tabs = ['Coco chips', 'Coco peat products', 'Coco fiber products'];
 
     const filteredData = products.filter(product => product.category === activeTab);
 

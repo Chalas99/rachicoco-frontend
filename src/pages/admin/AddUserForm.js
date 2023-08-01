@@ -53,8 +53,8 @@ const AddUserForm = () => {
         <div className=" mt-16 flex justify-center w-full">
          
         <form className="w-full max-w-lg">
-            {/* <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div className="flex flex-wrap -mx-3 mb-6">
+            {/* <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-first-name">
                 first Name
                 </label>
@@ -66,8 +66,8 @@ const AddUserForm = () => {
                 Last Name
                 </label>
                 <input value={lastName} onChange={(e) => setLastName(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" />
-            </div>
             </div> */}
+            </div>
             <div className="flex flex-wrap -mx-3 mb-2">
             <div className="w-full px-3">
                 <label className="block uppercase tracking-wide text-gray-100 text-xs font-bold mb-2" for="grid-password">

@@ -16,11 +16,20 @@ const addToCart = (id) =>{
   return Axios.get("/cart", +id);
 };
 
+const findAllCustomers = () =>{
+  return Axios.get("/GetAllCustomers");
+};
+
+const getOrders = (cusid) =>{
+  return Axios.get("/getOrders/" +cusid);
+};
 const CustomerService = {
     signUpCustomer,
     signInCustomer,
     supportTicket,
-    addToCart
+    addToCart,
+    findAllCustomers,
+    getOrders
   };
     
   export default CustomerService;

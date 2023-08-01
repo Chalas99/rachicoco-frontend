@@ -3,15 +3,18 @@ import UserNavBar from '../../components/UserNavBar'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import useCart from '../../hooks/useCart';
+import StripeService from '../../routes/stripeServiceRoutes';
 
 const Cart = () => {
   const { cart, setCart } = useCart();
-  const { auth, setAuth } = useAuthContext();
+  const { authUser, setAuthUser } = useAuthContext();
   const navigateTo = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    let tprice = 0;
+    const cart = JSON.parse(localStorage.getItem('cart'))
+    if(cart){
+      let tprice = 0;
     cart.cartItems.map((item) => {
       tprice += parseFloat(item.price);
     });
@@ -32,9 +35,14 @@ const Cart = () => {
         total: subTotalPrice,
       });
     }
+    }else{
+      console.log("No items found!");
+    }
+    
   }, []);
 
   const clearCart = () => {
+    localStorage.removeItem('cart');
     setCart({
       cartItems: [],
       count: 0,
@@ -49,44 +57,32 @@ const Cart = () => {
       return item.productID !== productID;
     });
     setCart({
+      ...cart,
       cartItems: newCart,
       count: cart.count - 1,
     });
+    localStorage.setItem('cart', JSON.stringify(cart));
   };
 
   const handleCheckout = (e) => {
     e.preventDefault();
 
-    // if (!auth.user) {
-    //   navigateTo(
-    //     "/buyers/login",
-    //     {
-    //       state: {
-    //         from: location,
-    //       },
-    //     },
-    //     { replace: true }
-    //   );
-    // } else {
-    //   const data = {
-    //     cartItems: cart.cartItems,
-    //     buyerID: auth?.user.id,
-    //     cart: cart,
-    //     auth: auth,
-    //   };
-    //   axios
-    //     .post(CREATE_CHECKOUT_URL, data)
-    //     .then((response) => {
-    //       if (response.data.url) {
-    //         window.location.replace(response.data.url);
-    //         console.log("here");
-    //         setAuth(response.data.auth);
-    //         setCart(response.data.cart);
-    //       }
-    //     })
-    //     .catch((err) => console.log(err.message));
-    // }
-  };
+      const data = {
+        cartItems: cart.cartItems,
+        customerID: authUser.user.id,
+        cart: cart,
+        totalPrice: cart.total,
+      };
+      
+      StripeService
+        .checkout(data)
+        .then((response) => {
+          if (response.data.url) {
+            window.location.replace(response.data.url);
+          }
+        })
+        .catch((err) => console.log(err.message));
+    };
 
   return (
       <>
@@ -124,17 +120,17 @@ const Cart = () => {
                                 />
                               </div>
                               <div className="flex justify-center font-medium items-center w-full col-span-2">
-                                <p class="block text-center ">{item.title}</p>
+                                <p class="block text-center ">{item.Name}</p>
                               </div>
                               <div className="flex justify-center font-medium items-center w-full  col-span-1">
                                 <p class="block text-left ">{item.price}</p>
                               </div>
                               <div className="flex justify-center font-medium items-center w-full col-span-1">
-                                <p class="block ml-10">{item.qt ? item.qt : 1}</p>
+                                <p class="block ml-10">{item.quantity}</p>
                               </div>
                               <div className="flex justify-center font-medium items-center w-full col-span-1">
                                 <p class="block ml-10">
-                                  ${item.price * (item.qt ? item.qt : 1)}
+                                  ${item.price * (item.quantity)}
                                 </p>
                               </div>
 
@@ -222,7 +218,6 @@ const Cart = () => {
                   >
                     Checkout
                   </button>
-
                   
                 </div>
               </div>

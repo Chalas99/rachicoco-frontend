@@ -7,30 +7,30 @@ import AdminService from '../../routes/adminServiceRoutes';
 
 
 const AdminUser = () => {
-//     const [Users, setusers] = useState();
+    const [Users, setusers] = useState();
     
-//     useEffect(() => {
-//           AdminService
-//             .getAllUsers()
-//             .then((res) => {
-//               setusers(res.data.users);
-//             })
-//             .catch((error) => {
-//               console.log(error);
-//             });
+    useEffect(() => {
+          AdminService
+            .getAllUsers()
+            .then((res) => {
+              setusers(res.data.users);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
 
-//     }, []);
+    }, []);
 
-//     const handleDelete = (id) => {
-//         AdminService
-//             .deleteuser(id)
-//             .then((res) => {
-//                 window.location.reload();
-//             })
-//             .catch((error) => {
-//                 console.log(error);
-//             });
-//     }
+    const handleDelete = (id) => {
+        AdminService
+            .deleteuser(id)
+            .then((res) => {
+                window.location.reload();
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
   return (
     <div> <div className='fixed top-0 w-full'>
     <NavBar/>
